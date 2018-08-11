@@ -1,3 +1,7 @@
+:root {
+  --box-shadow: 0 .3rem .7rem rgba(0, 0, 0, 0.4);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -11,4 +15,280 @@ html {
 body {
   box-sizing: border-box;
   font-size: 1.6rem;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.7;
+}
+
+.btn {
+  font-size: 1.4rem;
+  padding: 1.5rem;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+}
+
+.btn:focus, .btn:active {
+  outline: none;
+}
+
+a:link, a:hover, a:visited, a:active {
+  text-decoration: none;
+  outline: none;
+  color: inherit;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  background-color: #20bf6b;
+}
+
+.form__input {
+  padding: 1.5rem;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  border: 2px solid #dedede;
+  border-radius: 4px;
+  margin: 1rem 0;
+  transition: all .2s;
+  color: #6b6b6b;
+}
+
+.form__input:focus {
+  background-color: #ebebeb;
+}
+
+.form__input::placeholder {
+  text-transform: uppercase;
+}
+
+.form__input::-moz-placeholder {
+  color: #6b6b6b;
+}
+
+.nav {
+  height: 7rem;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1.5rem;
+  background-color: #51606b;
+}
+
+.nav .logo {
+  height: 4rem;
+  width: 15rem;
+  fill: #ebebeb;
+}
+
+.nav .logo-container {
+  height: 7rem;
+  transition: all .2s;
+  margin-top: -1.5rem;
+  display: flex;
+  align-items: center;
+  padding: 0 1.5rem;
+}
+
+.nav .logo-container:hover {
+  background-color: #3b464e;
+}
+
+.nav .user-menu {
+  display: flex;
+  height: 7rem;
+  margin-top: -1.5rem;
+  cursor: pointer;
+  transition: all .2s;
+}
+
+.nav .user-menu:hover {
+  background-color: #3b464e;
+}
+
+.nav .user-menu__photo {
+  height: 5rem;
+  border-radius: 20rem;
+}
+
+.nav .user-menu__photo-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin: 0 1.5rem;
+}
+
+.nav .user-menu__name {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  color: #ebebeb;
+  font-size: 1.4rem;
+  margin-right: 1rem;
+}
+
+.nav .user-menu__caret {
+  align-self: center;
+  fill: white;
+  height: .7rem;
+  width: 1.4rem;
+  margin-right: 1.5rem;
+}
+
+.home {
+  background-color: white;
+  height: 100vh;
+}
+
+.home__content {
+  height: 100%;
+  display: flex;
+}
+
+.home__events {
+  width: 40rem;
+  margin: 0 auto;
+  margin-top: 8rem;
+}
+
+.home__events__search-bar {
+  border-bottom: 1px solid #6b6b6b;
+  margin-bottom: 3rem;
+}
+
+.home__events__search-bar-icon {
+  height: 2.5rem;
+  width: 2.5rem;
+  fill: #dedede;
+  transform: translateY(4px);
+  margin-right: 1rem;
+}
+
+.home__events__search-bar-text {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: #dedede;
+}
+
+.home__events__btn {
+  text-align: center;
+  transition: background-color .2s;
+}
+
+.home__events__btn--search {
+  background-color: #20bf6b;
+}
+
+.home__events__btn--search:hover {
+  background-color: #199353;
+}
+
+.home__events__btn--host {
+  background-color: #51606b;
+}
+
+.home__events__btn--host:hover {
+  background-color: #3b464e;
+}
+
+.home__events--span {
+  color: #51606b;
+  display: block;
+  margin: 5rem 0;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  background-color: #ebebeb;
+  width: 30rem;
+  height: 100%;
+}
+
+.sidebar__item {
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  transition: all .2s;
+}
+
+.sidebar__item:hover {
+  background-color: #dedede;
+}
+
+.sidebar__icon {
+  height: 2.5rem;
+  width: 2.5rem;
+  fill: #51606b;
+}
+
+.sidebar__text {
+  font-size: 1.4rem;
+  margin-left: 2rem;
+}
+
+.login {
+  width: 50vw;
+  margin: 0 auto;
+  padding-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login__logo {
+  display: block;
+  height: 4rem;
+  fill: white;
+  margin: 0 auto;
+  margin-bottom: 8rem;
+}
+
+.login__heading {
+  text-transform: uppercase;
+  color: white;
+  text-align: center;
+  margin: 3rem 0;
+  letter-spacing: 1px;
+  cursor: default;
+}
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login__form-container {
+  width: 60rem;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: var(--box-shadow);
+  padding: 5rem 8rem;
+}
+
+.login__btn {
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  background-color: #20bf6b;
+}
+
+.login__links {
+  width: 60rem;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.login__links--text {
+  cursor: default;
+  color: #ebebeb;
+  font-size: 1.4rem;
 }

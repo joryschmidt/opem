@@ -1,0 +1,20 @@
+<div class="login">
+  <div class="login__logo-container">
+    <svg class="login__logo"><use xlink:href="img/sprite.svg#logo"></use></svg>
+  </div>
+  
+  <div class="login__heading">Welcome Back</div>
+  
+  <div class="login__form-container">
+    <form class="form login__form" ng-submit="submit()">
+      <input type="email" class="form__input login__input" placeholder="Email address" ng-model="user.email" />
+      <input type="password" class="form__input login__input" placeholder="Password" ng-model="user.password" />
+      <input class="btn login__btn" type="submit" value="Login" />
+    </form>
+  </div>
+  
+  <div class="login__links">
+    <span class="login__links--text"><a class='login__links-link' href='#'>Forgot password?</a></span>
+    <span class="login__links--text">Don't have an account? <strong><a class='login__links-link' href='#'>Register Now</a></strong></span>
+  </div>
+</div>

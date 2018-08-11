@@ -6,6 +6,10 @@
         templateUrl: 'templates/home.html',
         controller: 'homeCtrl'
       })
+      .when('/login', {
+        templateUrl: 'templates/login.html',
+        controller: 'loginCtrl'
+      })
       .otherwise({ redirectTo: '/' });
   }]);
 })();
