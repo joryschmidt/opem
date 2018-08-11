@@ -19,3 +19,8 @@ a:link, a:hover, a:visited, a:active {
   outline: none;
   color: inherit;
 }
+
+// so the hosted-by-me svg is not just a filled in square
+.cls-2 {
+  fill: none;
+}

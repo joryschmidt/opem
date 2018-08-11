@@ -10,6 +10,7 @@
     height: 4rem;
     width: 15rem;
     fill: $color-grey-light;
+    transform: translateY(4px);
     
     &-container {
       height: 7rem;
@@ -159,5 +160,6 @@
   &__text {
     font-size: 1.4rem;
     margin-left: 2rem;
+    color: $color-secondary;
   }
 }

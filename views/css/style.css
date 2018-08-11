@@ -15,7 +15,7 @@ html {
 body {
   box-sizing: border-box;
   font-size: 1.6rem;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   line-height: 1.7;
 }
 
@@ -39,6 +39,10 @@ a:link, a:hover, a:visited, a:active {
   text-decoration: none;
   outline: none;
   color: inherit;
+}
+
+.cls-2 {
+  fill: none;
 }
 
 .container {
@@ -84,6 +88,7 @@ a:link, a:hover, a:visited, a:active {
   height: 4rem;
   width: 15rem;
   fill: #ebebeb;
+  transform: translateY(4px);
 }
 
 .nav .logo-container {
@@ -232,6 +237,7 @@ a:link, a:hover, a:visited, a:active {
 .sidebar__text {
   font-size: 1.4rem;
   margin-left: 2rem;
+  color: #51606b;
 }
 
 .login {
