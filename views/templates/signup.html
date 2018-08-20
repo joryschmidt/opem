@@ -1,0 +1,18 @@
+<div class="signup">
+  <div class="signup__logo-container">
+    <svg class="signup__logo"><use xlink:href="img/sprite.svg#logo"></use></svg>
+  </div>
+  
+  <div class="signup__heading">Welcome to Opem</div>
+  
+  <div class="signup__form-container">
+    <form class="form signup__form" ng-submit="submit()">
+      <input type="text" class="form__input signup__input" placeholder="Username" ng-model="user.username" />
+      <input type="email" class="form__input signup__input" placeholder="Email address" ng-model="user.email" />
+      <input type="password" class="form__input signup__input" placeholder="Password" ng-model="user.password" />
+      <input class="btn signup__btn" type="submit" value="Sign Up" />
+    </form>
+  </div>
+  
+  <span class="signup__link"><a class='signup__links-link' href='/#!/login'>Already have an account?</a></span>
+</div>

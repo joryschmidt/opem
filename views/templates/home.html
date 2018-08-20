@@ -4,11 +4,14 @@
       <a href="/#!/login"><svg class="logo"><use xlink:href="img/sprite.svg#logo"></use></svg></a>
     </div>
     <div class="user-menu">
-      <div class="user-menu__photo-container"><img class='user-menu__photo' src="img/boobus.jpg" alt="User photo"></div>
-      <div class="user-menu__name">Jory Schmidt</div>
+      <div class="user-menu__photo-container"><img class='user-menu__photo' ng-src="{{ user.gravatar }}?d=identicon" alt="User photo"></div>
+      <div class="user-menu__name">{{ user.username }}</div>
       <svg class="user-menu__caret"><use xlink:href="img/sprite.svg#downward-carrot"></use></svg>
     </div>
   </nav>
+  <div class="dropdown">
+    <span class="dropdown-item" ng-click="logout()">Logout</span>
+  </div>
   
   <div class="home__content">
     <div class="sidebar">
@@ -30,17 +33,77 @@
       </a>
     </div>
     
-    <div class="home__events">
-      
-      <!--this div will end up as a form-->
-      <div class="home__events__search-bar">
-        <svg class="home__events__search-bar-icon"><use xlink:href="img/sprite.svg#search"></use></svg>
-        <span class="home__events__search-bar-text">Search For Event</span>
+    <div class="home__content__main">
+      <div class="home__events">
+        <!--this div will end up as a form-->
+        <div class="home__events__search-bar">
+          <svg class="home__events__search-bar-icon"><use xlink:href="img/sprite.svg#search"></use></svg>
+          <span class="home__events__search-bar-text">Search For Event</span>
+        </div>
+        <div class="btn home__events__btn home__events__btn--search">Search</div>
+        <span class="home__events--span">or</span>
+        <div class="btn home__events__btn home__events__btn--host">Host An Event</div>
       </div>
       
-      <div class="btn home__events__btn home__events__btn--search">Search</div>
-      <span class="home__events--span">or</span>
-      <div class="btn home__events__btn home__events__btn--host">Host An Event</div>
+      <div class="popup" id="popup">
+        <div class="popup__content">
+          <span class="popup__heading">Host an event</span>
+          <form class="popup__form">
+            
+            <span class="popup__form__label">Event name</span>
+              <input class="popup__form__input" type="text" name="name" placeholder="Name of event" />
+              
+            <span class="popup__form__label">Location</span>
+              <input class="popup__form__input" type="text" name="location" placeholder="Add a location" />
+              
+            <span class="popup__form__label">Date/Time</span>
+              <div class="popup__form__group">
+                
+                <div class="popup__form__group__container">
+                  <input class="popup__form__group__container__input" type="date" />
+                  <svg class="popup__form__group__container__icon"><use xlink:href="img/sprite.svg#calender"></use></svg>
+                </div>
+                
+                <div class="popup__form__group__container">
+                  <input class="popup__form__group__container__input" type="time" />
+                  <svg class="popup__form__group__container__icon"><use xlink:href="img/sprite.svg#time"></use></svg>
+                </div>
+                
+                <div class="popup__form__group__container popup__form__group__container--end">
+                  <svg class="popup__form__group__container__icon popup__form__group__container__icon--plus"><use xlink:href="img/sprite.svg#plus"></use></svg>
+                  <span class="popup__form__group__container__span" id="end_time">End Time</span>
+                </div>
+              </div>
+              
+            <span class="popup__form__label">Description</span>
+              <textarea class="popup__form__input" type="text" name="description" placeholder="Short description of event"></textarea>
+          </form>
+          <div class="popup__next">
+            <span class="popup__next__text">Next <svg class="popup__next__icon"><use xlink:href="img/sprite.svg#carrot"></use></svg></span>
+          </div>
+          
+          <div class="popup__close"><svg class="popup__close__icon"><use xlink:href="img/sprite.svg#close"></use></svg></div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
+<!--makes the dropdown menu work and it has to go here-->
+<script type="text/javascript">
+  $('.user-menu').on('mouseenter', function() {
+    $('.dropdown').addClass('drop');
+  });
+  
+  $('.dropdown').on('mouseenter', function() {
+    $('.user-menu').addClass('darken');
+  }); 
+  
+  $('.user-menu').on('mouseleave', function() {
+    $('.dropdown').removeClass('drop');
+  });
+  
+  $('.dropdown').on('mouseleave', function() {
+    $('.user-menu').removeClass('darken');
+  }); 
+</script>

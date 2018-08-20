@@ -1,0 +1,351 @@
+.drop {
+  transform: translateY(7rem);
+}
+
+.darken {
+  background-color: darken($color-secondary, 10%);
+}
+
+.nav {
+  height: 7rem;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1.5rem;
+  padding-right: 0;
+  background-color: $color-secondary;
+  
+  position: relative;
+  z-index: 10;
+  
+  .logo {
+    height: 4rem;
+    width: 15rem;
+    fill: $color-grey-light;
+    transform: translateY(4px);
+    
+    &-container {
+      height: 7rem;
+      transition: all .2s;
+      margin-top: -1.5rem;
+      display: flex;
+      align-items: center;
+      padding: 0 1.5rem;
+      
+      &:hover {
+        background-color: darken($color-secondary, 10%);
+      }
+    }
+  }
+  
+  .user-menu {
+    display: flex;
+    height: 7rem;
+    margin-top: -1.5rem;
+    cursor: pointer;
+    
+      &__photo {
+      height: 5rem;
+      border-radius: 20rem;
+      
+      &-container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        margin: 0 1.5rem;
+      }
+    }
+    
+    &__name {
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      color: $color-grey-light;
+      font-size: 1.4rem;
+      margin-right: 1rem;
+    }
+    
+    &__caret {
+      align-self: center;
+      fill: white;
+      height: .7rem;
+      width: 1.4rem;
+      margin-right: 1.5rem;
+    }
+    
+    &:hover {
+      background-color: darken($color-secondary, 10%);
+    }
+  }
+}
+
+.dropdown {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 5;
+  transition: all .2s;
+  
+  &:hover {
+    transform: translateY(7rem);
+  }
+  
+  &-item {
+    height: 5rem;
+    width: 12rem;
+    padding: 1rem;
+    color: white;
+    background-color: $color-secondary;
+    transition: all .3s;
+    text-align: right;
+    cursor: pointer;
+    
+    border-bottom: 1px solid $color-grey-dark;
+    
+    &:hover {
+      background-color: darken($color-secondary, 10%);
+    }
+  }
+}
+
+.home {
+  background-color: white;
+  height: 100vh;
+  position: relative;
+  
+  
+  &__content {
+    height: 100%;
+    display: flex;
+    
+    &__main {
+      position: relative;
+      width: 100%;
+    }
+  }
+  
+  &__events {
+    width: 40rem;
+    margin: 0 auto;
+    margin-top: 8rem;
+    
+    &__search-bar {
+      
+      border-bottom: 1px solid $color-grey-dark;
+      margin-bottom: 3rem;
+      
+      &-icon {
+        height: 2.5rem;
+        width: 2.5rem;
+        fill: $color-grey;
+        transform: translateY(4px);
+        margin-right: 1rem;
+      }
+      
+      &-text {
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        color: $color-grey;
+      }
+    }
+    
+    &__btn {
+      text-align: center;
+      transition: background-color .2s;
+      
+      &--search {
+        background-color: $color-primary;
+        
+        &:hover {
+          background-color: darken($color-primary, 10%);
+        }
+      }
+      
+      &--host {
+        background-color: $color-secondary;
+        
+        &:hover {
+          background-color: darken($color-secondary, 10%);
+        }
+      }
+    }
+    
+    &--span {
+      color: $color-secondary;
+      display: block;
+      margin: 5rem 0;
+      font-size: 2rem;
+      text-align: center;
+    }
+  }
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  background-color: $color-grey-light;
+  width: 30rem;
+  height: 100%;
+  
+  &__item {
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    transition: all .2s;
+    
+    &:hover {
+      background-color: $color-grey;
+    }
+  }
+  
+  &__icon {
+    height: 2.5rem;
+    width: 2.5rem;
+    fill: $color-secondary;
+  }
+  
+  &__text {
+    font-size: 1.4rem;
+    margin-left: 2rem;
+    color: $color-secondary;
+  }
+}
+
+.popup {
+  
+  position: absolute;
+  top: 8rem;
+  right: 20rem;
+  
+  // visibility: hidden;
+  // opacity: 0;
+  
+  &__heading {
+    text-transform: uppercase;
+    color: $color-primary;
+    font-size: 3.2rem;
+    margin: 1.5rem auto 7rem;
+    display: block;
+    text-align: center;
+  }
+  
+  &__content {
+    width: 110rem;
+    background-color: white;
+    border-radius: $def-border-radius;
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+  }
+  
+  &__form {
+    width: 75%;
+    margin: 0 auto;
+    
+    display: grid;
+    grid-template: repeat(3, 1fr) 2.5fr / 1.2fr 4fr;
+    grid-column-gap: 2.5rem;
+    grid-row-gap: 2.5rem;
+    
+    &__label {
+      text-transform: uppercase;
+      font-size: 2rem;
+      text-align: right;
+    }
+    
+    &__input {
+      border: 1px solid $color-grey;
+      border-radius: $def-border-radius;
+      
+      &::placeholder {
+        font-size: 1.8rem;
+      }
+    }
+    
+    & > * {
+      padding: 1rem;
+    }
+    
+    &__group {
+      display: flex;
+      justify-content: space-between;
+      padding: 0;
+      
+      &__container {
+        border: 1px solid $color-grey-dark;
+        border-radius: $def-border-radius;
+        width: 30%;
+        
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 1rem;
+        
+        &--end {
+          background-color: $color-secondary;
+        }
+        
+        &__input {
+          border: none;
+        }
+        
+        &__icon {
+          width: 2.5rem;
+          height: 2.5rem;
+          fill: $color-secondary;
+          
+          &--plus {
+            fill: white;
+            transform: scale(0.9);
+          }
+        }
+        
+        &__span {
+          color: white;
+          text-transform: uppercase;
+          font-size: 1.8rem;
+        }
+      }
+    }
+  }
+  
+  &__next {
+    
+    width: 100%;
+    height: 8.5rem;
+    background-color: $color-primary;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 3.5rem;
+    padding-right: 3rem;
+    
+    
+    &__text {
+      text-transform: uppercase;
+      color: white;
+      font-size: 3.5rem;
+    }
+    
+    &__icon {
+      fill: white;
+      width:  1.8rem;
+      height: 1.8rem;
+      transform: translateY(-2px);
+    }
+  }
+  
+  &__close {
+    
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    
+    &__icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      fill: $color-secondary;
+    }
+  }
+}

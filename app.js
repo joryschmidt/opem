@@ -41,8 +41,8 @@ app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, 'views')));
 
 // app.use('/admin', requireAdmin, admin);
-// app.use('/user', requireLogin, user);
-// app.use('/', main);
+app.use('/user', requireLogin, user);
+app.use('/', main);
 
 var port = process.env.PORT;
 app.listen(port, function() {

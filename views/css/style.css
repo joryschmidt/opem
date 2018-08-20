@@ -19,6 +19,22 @@ body {
   line-height: 1.7;
 }
 
+input, textarea {
+  font-size: 1.6rem;
+  font-family: 'Lato', sans-serif;
+  line-height: 1.7;
+}
+
+::selection {
+  background-color: #20bf6b;
+  color: white;
+}
+
+::-moz-selection {
+  background-color: #20bf6b;
+  color: white;
+}
+
 .btn {
   font-size: 1.4rem;
   padding: 1.5rem;
@@ -75,13 +91,24 @@ a:link, a:hover, a:visited, a:active {
   color: #6b6b6b;
 }
 
+.drop {
+  transform: translateY(7rem);
+}
+
+.darken {
+  background-color: #3b464e;
+}
+
 .nav {
   height: 7rem;
   display: flex;
   justify-content: space-between;
   width: 100%;
   padding: 1.5rem;
+  padding-right: 0;
   background-color: #51606b;
+  position: relative;
+  z-index: 10;
 }
 
 .nav .logo {
@@ -109,11 +136,6 @@ a:link, a:hover, a:visited, a:active {
   height: 7rem;
   margin-top: -1.5rem;
   cursor: pointer;
-  transition: all .2s;
-}
-
-.nav .user-menu:hover {
-  background-color: #3b464e;
 }
 
 .nav .user-menu__photo {
@@ -145,14 +167,53 @@ a:link, a:hover, a:visited, a:active {
   margin-right: 1.5rem;
 }
 
+.nav .user-menu:hover {
+  background-color: #3b464e;
+}
+
+.dropdown {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 5;
+  transition: all .2s;
+}
+
+.dropdown:hover {
+  transform: translateY(7rem);
+}
+
+.dropdown-item {
+  height: 5rem;
+  width: 12rem;
+  padding: 1rem;
+  color: white;
+  background-color: #51606b;
+  transition: all .3s;
+  text-align: right;
+  cursor: pointer;
+  border-bottom: 1px solid #6b6b6b;
+}
+
+.dropdown-item:hover {
+  background-color: #3b464e;
+}
+
 .home {
   background-color: white;
   height: 100vh;
+  position: relative;
 }
 
 .home__content {
   height: 100%;
   display: flex;
+}
+
+.home__content__main {
+  position: relative;
+  width: 100%;
 }
 
 .home__events {
@@ -240,6 +301,135 @@ a:link, a:hover, a:visited, a:active {
   color: #51606b;
 }
 
+.popup {
+  position: absolute;
+  top: 8rem;
+  right: 20rem;
+}
+
+.popup__heading {
+  text-transform: uppercase;
+  color: #20bf6b;
+  font-size: 3.2rem;
+  margin: 1.5rem auto 7rem;
+  display: block;
+  text-align: center;
+}
+
+.popup__content {
+  width: 110rem;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+}
+
+.popup__form {
+  width: 75%;
+  margin: 0 auto;
+  display: grid;
+  grid-template: repeat(3, 1fr) 2.5fr/1.2fr 4fr;
+  grid-column-gap: 2.5rem;
+  grid-row-gap: 2.5rem;
+}
+
+.popup__form__label {
+  text-transform: uppercase;
+  font-size: 2rem;
+  text-align: right;
+}
+
+.popup__form__input {
+  border: 1px solid #dedede;
+  border-radius: 4px;
+}
+
+.popup__form__input::placeholder {
+  font-size: 1.8rem;
+}
+
+.popup__form > * {
+  padding: 1rem;
+}
+
+.popup__form__group {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.popup__form__group__container {
+  border: 1px solid #6b6b6b;
+  border-radius: 4px;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.popup__form__group__container--end {
+  background-color: #51606b;
+}
+
+.popup__form__group__container__input {
+  border: none;
+}
+
+.popup__form__group__container__icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  fill: #51606b;
+}
+
+.popup__form__group__container__icon--plus {
+  fill: white;
+  transform: scale(0.9);
+}
+
+.popup__form__group__container__span {
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+}
+
+.popup__next {
+  width: 100%;
+  height: 8.5rem;
+  background-color: #20bf6b;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 3.5rem;
+  padding-right: 3rem;
+}
+
+.popup__next__text {
+  text-transform: uppercase;
+  color: white;
+  font-size: 3.5rem;
+}
+
+.popup__next__icon {
+  fill: white;
+  width: 1.8rem;
+  height: 1.8rem;
+  transform: translateY(-2px);
+}
+
+.popup__close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
+
+.popup__close__icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  fill: #51606b;
+}
+
 .login {
   width: 50vw;
   margin: 0 auto;
@@ -297,4 +487,59 @@ a:link, a:hover, a:visited, a:active {
   cursor: default;
   color: #ebebeb;
   font-size: 1.4rem;
+}
+
+.signup {
+  width: 50vw;
+  margin: 0 auto;
+  padding-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signup__logo {
+  display: block;
+  height: 4rem;
+  fill: white;
+  margin: 0 auto;
+  margin-bottom: 8rem;
+}
+
+.signup__heading {
+  text-transform: uppercase;
+  color: white;
+  text-align: center;
+  margin: 3rem 0;
+  letter-spacing: 1px;
+  cursor: default;
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+
+.signup__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.signup__form-container {
+  width: 60rem;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: var(--box-shadow);
+  padding: 5rem 8rem;
+}
+
+.signup__btn {
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  background-color: #20bf6b;
+}
+
+.signup__link {
+  margin-top: 2rem;
+  cursor: default;
+  font-size: 1.4rem;
+  color: #ebebeb;
 }

@@ -1,8 +1,9 @@
 (function() {
   var app = angular.module('opem', ['ngRoute']);
+  
   app.config(['$routeProvider', '$locationProvider', '$rootScopeProvider', function($routeProvider, $locationProvider, $rootScopeProvider) {
     $routeProvider
-      .when('/', {
+      .when('/dashboard', {
         templateUrl: 'templates/home.html',
         controller: 'homeCtrl'
       })
@@ -10,6 +11,15 @@
         templateUrl: 'templates/login.html',
         controller: 'loginCtrl'
       })
-      .otherwise({ redirectTo: '/' });
+      .when('/signup', {
+        templateUrl: 'templates/signup.html',
+        controller: 'signupCtrl'
+      })
+      .otherwise({ redirectTo: '/login' });
+  }]);
+  
+  app.factory('hasRootUser', ['$rootScope', function($rootScope) {
+    console.log($rootScope);
+    return { check: !!$rootScope.rootUser };
   }]);
 })();
