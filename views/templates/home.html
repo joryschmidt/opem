@@ -45,46 +45,8 @@
         <div class="btn home__events__btn home__events__btn--host" id="host-event">Host An Event</div>
       </div>
       
-      <div class="popup" id="popup">
-        <div class="popup__content">
-          <span class="popup__heading">Host an event</span>
-          <form class="popup__form">
-            
-            <span class="popup__form__label">Event name</span>
-              <input class="popup__form__input" type="text" name="name" placeholder="Name of event" />
-              
-            <span class="popup__form__label">Location</span>
-              <input class="popup__form__input" type="text" name="location" placeholder="Add a location" />
-              
-            <span class="popup__form__label">Date/Time</span>
-              <div class="popup__form__group">
-                
-                <div class="popup__form__group__container">
-                  <input class="popup__form__group__container__input" type="date" />
-                  <svg class="popup__form__group__container__icon"><use xlink:href="img/sprite.svg#calender"></use></svg>
-                </div>
-                
-                <div class="popup__form__group__container">
-                  <input class="popup__form__group__container__input" type="time" />
-                  <svg class="popup__form__group__container__icon"><use xlink:href="img/sprite.svg#time"></use></svg>
-                </div>
-                
-                <div class="popup__form__group__container popup__form__group__container--end">
-                  <svg class="popup__form__group__container__icon popup__form__group__container__icon--plus"><use xlink:href="img/sprite.svg#plus"></use></svg>
-                  <span class="popup__form__group__container__span" id="end_time">End Time</span>
-                </div>
-              </div>
-              
-            <span class="popup__form__label">Description</span>
-              <textarea class="popup__form__input" type="text" name="description" placeholder="Short description of event"></textarea>
-          </form>
-          <div class="popup__next">
-            <span class="popup__next__text">Next <svg class="popup__next__icon"><use xlink:href="img/sprite.svg#carrot"></use></svg></span>
-          </div>
-          
-          <div class="popup__close"><svg class="popup__close__icon" id="close-popup"><use xlink:href="img/sprite.svg#close"></use></svg></div>
-        </div>
-      </div>
+      <popup></popup>
+      
     </div>
   </div>
 </div>
@@ -108,10 +70,7 @@
   }); 
   
   $('#host-event').on('click', function() {
-    $('#popup').css({ visibility: 'visible', opacity: 1 });
+    $('#popup1').css({ visibility: 'visible', opacity: 1 });
   });
   
-  $('#close-popup').on('click', function() {
-    $('#popup').css({ visibility: 'hidden', opacity: 0 });
-  });
 </script>

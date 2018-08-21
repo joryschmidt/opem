@@ -1,6 +1,9 @@
 angular.module('opem')
 
 .controller('homeCtrl', ['$scope', '$http', '$location', function($scope, $http, $location) {
+  
+  $scope.event = {};
+  
   $http.get('/user').then(function(q) {
     $scope.user = q.data;
   }, function(response) {
@@ -15,5 +18,9 @@ angular.module('opem')
     }, function() {
       console.log("couldn't log out");
     });
-  }
+  };
+  
+  $scope.submit = function() {
+    
+  };
 }]);

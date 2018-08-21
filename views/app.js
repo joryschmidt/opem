@@ -22,4 +22,11 @@
     console.log($rootScope);
     return { check: !!$rootScope.rootUser };
   }]);
+  
+  app.directive('popup', function() {
+    return {
+      restrict: 'E',
+      templateUrl: 'templates/_popup.html'
+    }
+  });
 })();

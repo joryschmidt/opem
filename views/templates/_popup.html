@@ -1,0 +1,105 @@
+<div class="popup" id="popup1">
+  <div class="popup__content">
+    <span class="popup__heading">Host an event</span>
+    <form class="popup__form">
+      
+      <span class="popup__form__label">Event name</span>
+        <input class="popup__form__input" type="text" name="name" placeholder="Name of event" />
+        
+      <span class="popup__form__label">Location</span>
+        <input class="popup__form__input" type="text" name="location" placeholder="Add a location" />
+        
+      <span class="popup__form__label">Date/Time</span>
+        <div class="popup__form__group">
+          
+          <div class="popup__form__group__container">
+            <input class="popup__form__group__container__input" type="date" />
+            <svg class="popup__form__group__container__icon"><use xlink:href="img/sprite.svg#calender"></use></svg>
+          </div>
+          
+          <div class="popup__form__group__container">
+            <input class="popup__form__group__container__input" type="time" />
+            <svg class="popup__form__group__container__icon"><use xlink:href="img/sprite.svg#time"></use></svg>
+          </div>
+          
+          <div class="popup__form__group__container popup__form__group__container--end">
+            <svg class="popup__form__group__container__icon popup__form__group__container__icon--plus"><use xlink:href="img/sprite.svg#plus"></use></svg>
+            <span class="popup__form__group__container__span" id="end_time">End Time</span>
+          </div>
+        </div>
+        
+      <span class="popup__form__label">Description</span>
+        <textarea class="popup__form__input" type="text" name="description" placeholder="Short description of event"></textarea>
+    </form>
+    <div class="popup__nav">
+      <span class="popup__nav__text" id="popup-next">Next <svg class="popup__nav__icon"><use xlink:href="img/sprite.svg#carrot"></use></svg></span>
+    </div>
+    
+    <div class="popup__close"><svg class="popup__close__icon"><use xlink:href="img/sprite.svg#close"></use></svg></div>
+  </div>
+</div>
+
+<div class="popup" id="popup2">
+  <div class="popup__content">
+    <span class="popup__heading">Host an event</span>
+    <form class="popup__form" ng-submit="submit()">
+      
+      <span class="popup__form__label">Number of spots</span>
+        <input class="popup__form__input" type="text" name="spots" placeholder="Add Number" />
+        
+      <span class="popup__form__label">Event type</span>
+        <div class="popup__form__event-type">
+          <div class="popup__form__checkbox__container">
+            <input type="checkbox" name="comedy" id="comedy" class="popup__form__checkbox">
+              <label for="comedy" class="popup__form__group__label">Comedy</span>
+          </div>
+              
+          <div class="popup__form__checkbox__container">
+            <input type="checkbox" name="music" id="music" class="popup__form__checkbox">
+              <label for="music" class="popup__form__group__label">Music</span>
+          </div>
+              
+          <div class="popup__form__checkbox__container">
+            <input type="checkbox" name="other" id="other" class="popup__form__checkbox">
+              <label for="other" class="popup__form__group__label">Other</span>
+          </div>
+        </div>
+        
+        <span class="popup__form__label">Sign Up Window</span>
+        <div class="popup__form__group__container">
+          
+          <div class="popup__form__group__container">
+            <input class="popup__form__group__container__input" type="time" />
+            <svg class="popup__form__group__container__icon"><use xlink:href="img/sprite.svg#time"></use></svg>
+          </div>
+          
+          <span class="popup__form__sign-up-text">to</span>
+          
+          <div class="popup__form__group__container">
+            <input class="popup__form__group__container__input" type="time" />
+            <svg class="popup__form__group__container__icon"><use xlink:href="img/sprite.svg#time"></use></svg>
+          </div>
+        </div>
+        
+        <span class="popup__form__label">Recurring Event</span>
+        <div class="popup__form__checkbox__container">
+          <input type="checkbox" name="recurring" id="recurring" class="popup__form__checkbox">
+            <label for="comedy" class="popup__form__group__label">Event Repeats</span>
+        </div>
+    </form>
+    
+    <div class="popup__close"><svg class="popup__close__icon"><use xlink:href="img/sprite.svg#close"></use></svg></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $('#popup-next').on('click', function() {
+    $('#popup1').css({ visibility: 'hidden', opacity: 0 });
+    $('#popup2').css({ visibility: 'visible', opacity: 1 });
+  });
+  
+  $('.popup__close__icon').on('click', function() {
+    $('#popup1').css({ visibility: 'hidden', opacity: 0 });
+    $('#popup2').css({ visibility: 'hidden', opacity: 0 });
+  });
+</script>
