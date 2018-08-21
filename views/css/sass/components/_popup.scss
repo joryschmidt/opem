@@ -88,7 +88,7 @@
         
         &__input {
           border: none;
-          width: 70%;
+          width: 74%;
         }
         
         &__icon {
@@ -122,17 +122,6 @@
       display: grid;
       grid-template: 4rem / repeat(3, 1fr);
       align-items: center;
-    }
-    
-    &__checkbox {
-      height: 1.5rem;
-      width: 1.5rem;
-      border-radius: $def-border-radius;
-      padding: 0;
-      
-      &__container {
-        
-      }
     }
     
     &__sign-up-text {
@@ -198,6 +187,11 @@
       height: 2.5rem;
       fill: $color-secondary;
     }
+  }
+  
+  &__spots > &__form__input {
+    padding: 1rem;
+    margin-right: 1rem;
   }
 }
 

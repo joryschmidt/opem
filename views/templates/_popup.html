@@ -46,23 +46,28 @@
     <form class="popup__form2" ng-submit="submit()">
       
       <span class="popup__form__label">Number of spots</span>
-        <input class="popup__form__input" type="text" name="spots" placeholder="Add Number" />
+        <div class="popup__spots">
+          <input class="popup__form__input" type="text" name="spots" placeholder="Add Number" />
+          
+          <input type="checkbox" name="allow" id="allow" class="popup__form__checkbox checkbox" />
+            <label for="allow" class="checkbox__label"><span class="checkbox__box"></span><span class="checkbox__text">Allow spot requests</span></label>
+        </div>
         
       <span class="popup__form__label">Event type</span>
         <div class="popup__form__event-type">
           <div class="popup__form__checkbox__container">
-            <input type="checkbox" name="comedy" id="comedy" class="popup__form__checkbox">
-              <label for="comedy" class="popup__form__group__label">Comedy</span>
+            <input type="checkbox" name="comedy" id="comedy" class="popup__form__checkbox checkbox">
+              <label for="comedy" class="checkbox__label"><span class="checkbox__box"></span><span class="checkbox__text">Comedy</span></label>
           </div>
               
           <div class="popup__form__checkbox__container">
-            <input type="checkbox" name="music" id="music" class="popup__form__checkbox">
-              <label for="music" class="popup__form__group__label">Music</span>
+            <input type="checkbox" name="music" id="music" class="popup__form__checkbox checkbox">
+              <label for="music" class="checkbox__label"><span class="checkbox__box"></span><span class="checkbox__text">Music</span></label>
           </div>
               
           <div class="popup__form__checkbox__container">
-            <input type="checkbox" name="other" id="other" class="popup__form__checkbox">
-              <label for="other" class="popup__form__group__label">Other</span>
+            <input type="checkbox" name="other" id="other" class="popup__form__checkbox checkbox">
+              <label for="other" class="checkbox__label"><span class="checkbox__box"></span><span class="checkbox__text">Other</span></label>
           </div>
         </div>
         
@@ -84,8 +89,8 @@
         
         <span class="popup__form__label">Recurring Event</span>
         <div class="popup__form__checkbox__container">
-          <input type="checkbox" name="recurring" id="recurring" class="popup__form__checkbox">
-            <label for="comedy" class="popup__form__group__label">Event Repeats</span>
+          <input type="checkbox" name="recurring" id="recurring" class="popup__form__checkbox checkbox">
+            <label for="recurring" class="checkbox__label"><span class="checkbox__box"></span><span class="checkbox__text">Event Repeats</span></label>
         </div>
     </form>
     

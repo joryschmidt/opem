@@ -174,7 +174,7 @@ a:link, a:hover, a:visited, a:active {
 
 .popup__form__group__container__input {
   border: none;
-  width: 70%;
+  width: 74%;
 }
 
 .popup__form__group__container__icon {
@@ -206,13 +206,6 @@ a:link, a:hover, a:visited, a:active {
   display: grid;
   grid-template: 4rem/repeat(3, 1fr);
   align-items: center;
-}
-
-.popup__form__checkbox {
-  height: 1.5rem;
-  width: 1.5rem;
-  border-radius: 4px;
-  padding: 0;
 }
 
 .popup__form__sign-up-text {
@@ -274,8 +267,30 @@ a:link, a:hover, a:visited, a:active {
   fill: #51606b;
 }
 
+.popup__spots > .popup__form__input {
+  padding: 1rem;
+  margin-right: 1rem;
+}
+
 .nav2 {
   justify-content: space-between;
+}
+
+.checkbox {
+  display: none;
+}
+
+.checkbox__box {
+  display: inline-block;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid #dedede;
+  border-radius: 4px;
+  transform: translateY(0.6rem);
+}
+
+.checkbox:checked ~ .checkbox__label > .checkbox__box {
+  background-color: #dedede;
 }
 
 .drop {

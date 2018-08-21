@@ -1,0 +1,7 @@
+make create event form button display optional end time
+hook up forms to angular
+CRUD backend routes for users and events
+
+finish web views
+mobile views
+refactor angular app to just the sidebar items use express to serve login and signup views
