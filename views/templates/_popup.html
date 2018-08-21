@@ -31,6 +31,7 @@
       <span class="popup__form__label">Description</span>
         <textarea class="popup__form__input" type="text" name="description" placeholder="Short description of event"></textarea>
     </form>
+    
     <div class="popup__nav">
       <span class="popup__nav__text" id="popup-next">Next <svg class="popup__nav__icon"><use xlink:href="img/sprite.svg#carrot"></use></svg></span>
     </div>
@@ -42,7 +43,7 @@
 <div class="popup" id="popup2">
   <div class="popup__content">
     <span class="popup__heading">Host an event</span>
-    <form class="popup__form" ng-submit="submit()">
+    <form class="popup__form2" ng-submit="submit()">
       
       <span class="popup__form__label">Number of spots</span>
         <input class="popup__form__input" type="text" name="spots" placeholder="Add Number" />
@@ -66,16 +67,16 @@
         </div>
         
         <span class="popup__form__label">Sign Up Window</span>
-        <div class="popup__form__group__container">
+        <div class="popup__form__group__window">
           
-          <div class="popup__form__group__container">
+          <div class="popup__form__group__container popup__form__group__container--window">
             <input class="popup__form__group__container__input" type="time" />
             <svg class="popup__form__group__container__icon"><use xlink:href="img/sprite.svg#time"></use></svg>
           </div>
           
           <span class="popup__form__sign-up-text">to</span>
           
-          <div class="popup__form__group__container">
+          <div class="popup__form__group__container popup__form__group__container--window">
             <input class="popup__form__group__container__input" type="time" />
             <svg class="popup__form__group__container__icon"><use xlink:href="img/sprite.svg#time"></use></svg>
           </div>
@@ -88,6 +89,12 @@
         </div>
     </form>
     
+    
+    <div class="popup__nav nav2">
+      <span class="popup__nav__text" id="popup-prev"><svg class="popup__nav__icon"><use xlink:href="img/sprite.svg#carrot-back"></use></svg> Previous</span>
+      <span class="popup__nav__text" id="popup-next">Save</span>
+    </div>
+    
     <div class="popup__close"><svg class="popup__close__icon"><use xlink:href="img/sprite.svg#close"></use></svg></div>
   </div>
 </div>
@@ -96,6 +103,11 @@
   $('#popup-next').on('click', function() {
     $('#popup1').css({ visibility: 'hidden', opacity: 0 });
     $('#popup2').css({ visibility: 'visible', opacity: 1 });
+  });
+  
+  $('#popup-prev').on('click', function() {
+    $('#popup2').css({ visibility: 'hidden', opacity: 0 });
+    $('#popup1').css({ visibility: 'visible', opacity: 1 });
   });
   
   $('.popup__close__icon').on('click', function() {

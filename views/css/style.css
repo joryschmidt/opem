@@ -163,6 +163,11 @@ a:link, a:hover, a:visited, a:active {
   padding: 0 1rem;
 }
 
+.popup__form__group__container--window {
+  height: 5rem;
+  width: 40%;
+}
+
 .popup__form__group__container--end {
   background-color: #51606b;
 }
@@ -189,6 +194,14 @@ a:link, a:hover, a:visited, a:active {
   font-size: 1.8rem;
 }
 
+.popup__form__group__window {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 80%;
+}
+
 .popup__form__event-type {
   display: grid;
   grid-template: 4rem/repeat(3, 1fr);
@@ -199,24 +212,43 @@ a:link, a:hover, a:visited, a:active {
   height: 1.5rem;
   width: 1.5rem;
   border-radius: 4px;
+  padding: 0;
+}
+
+.popup__form__sign-up-text {
+  color: #dedede;
+}
+
+.popup__form2 {
+  width: 75%;
+  margin: 0 auto;
+  display: grid;
+  grid-template: repeat(4, 1fr)/2fr 4fr;
+  grid-column-gap: 2.5rem;
+  grid-row-gap: 2.5rem;
+  align-items: center;
+}
+
+.popup__form2 > * {
+  padding: 1rem;
 }
 
 .popup__nav {
   width: 100%;
-  height: 8.5rem;
+  height: 8rem;
   background-color: #20bf6b;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   cursor: pointer;
   margin-top: 3.5rem;
-  padding-right: 3rem;
+  padding: 0 3rem;
 }
 
 .popup__nav__text {
   text-transform: uppercase;
   color: white;
-  font-size: 3.5rem;
+  font-size: 3rem;
   height: 100%;
   display: flex;
   align-items: center;
@@ -226,7 +258,7 @@ a:link, a:hover, a:visited, a:active {
   fill: white;
   width: 1.8rem;
   height: 1.8rem;
-  margin-left: 1rem;
+  margin: 0 1rem;
 }
 
 .popup__close {
@@ -240,6 +272,10 @@ a:link, a:hover, a:visited, a:active {
   width: 2.5rem;
   height: 2.5rem;
   fill: #51606b;
+}
+
+.nav2 {
+  justify-content: space-between;
 }
 
 .drop {
