@@ -11,3 +11,5 @@ router.put('/', user_controller.updateUser);
 router.delete('/:id', user_controller.deleteUser);
 
 module.exports = router;
+
+// Need routes to add and remove events from users

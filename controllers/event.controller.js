@@ -5,7 +5,7 @@ exports.getEvent = function(req, res, next) {
     if (err) {
       console.log(err);
       res.status(500).send('That event does not exist in the database');
-    else {
+    } else {
       console.log(event);
       res.json(event);
     }
@@ -45,15 +45,15 @@ exports.createEvent = function(req, res) {
 exports.updateEvent = function(req, res) {
   Event.update({ _id: req.body.id }, {
     $set: {
-      date: req.body.date;
-      time_start: req.body.time_start;
-      time_end: req.body.time_end;
-      location: req.body.location;
-      description: req.body.description;
-      host: req.body.host;
-      attendees: req.body.attendees;
-      waitlist: req.body.waitlist;;
-      spots: req.body.spots;
+      date: req.body.date,
+      time_start: req.body.time_start,
+      time_end: req.body.time_end,
+      location: req.body.location,
+      description: req.body.description,
+      host: req.body.host,
+      attendees: req.body.attendees,
+      waitlist: req.body.waitlist,
+      spots: req.body.spots
     }
   }, function(err, event) {
     if (err) {

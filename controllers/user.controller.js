@@ -83,3 +83,23 @@ exports.deleteUser = function(req, res) {
     }
   });
 };
+
+// Update the user - NOT FINISHED
+exports.updateUser = function(req, res) {
+  
+  var hash = bcrypt.hashSync(req.body.password, 10);
+  
+  User.update({ _id: req.params.id }, {
+    $set: {
+      
+    }
+  }, function(err, user) {
+    if (err) {
+      console.log(err);
+      res.status(500).send('The user could not be updated');
+    } else {
+      console.log(user);
+      res.send('The user has been successfully updated');
+    }
+  });
+};
