@@ -10,6 +10,7 @@ var sessions = require('client-sessions');
 var main = require('./routes/main');
 var admin = require('./routes/admin');
 var user = require('./routes/user');
+var event = require('./routes/event');
 
 var db = 'mongodb://' + process.env.IP + '/openmic';
 
@@ -42,6 +43,7 @@ app.use(express.static(path.join(__dirname, 'views')));
 
 // app.use('/admin', requireAdmin, admin);
 app.use('/user', requireLogin, user);
+app.use('/event', requireLogin, event);
 app.use('/', main);
 
 var port = process.env.PORT;

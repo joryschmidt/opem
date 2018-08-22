@@ -287,6 +287,8 @@ a:link, a:hover, a:visited, a:active {
   border: 1px solid #dedede;
   border-radius: 4px;
   transform: translateY(0.6rem);
+  margin-right: 1rem;
+  transition: background-color .1s ease-out;
 }
 
 .checkbox:checked ~ .checkbox__label > .checkbox__box {

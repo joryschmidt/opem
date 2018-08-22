@@ -34,15 +34,16 @@ var EventSchema = new Schema({
     required: true
   },
   description: {
-    type: String,
-    required: true
+    type: String
   },
-  hosted_by: { type: Schema.ObjectId, ref: 'User', required: true },
+  host: { type: Schema.ObjectId, ref: 'User', required: true },
   attendees: [SpotSchema],
   waitlist: [SpotSchema],
   spots: {
-    type: Number
+    type: Number,
+    required: true
   },
+  // 0 - non-recurring, 1 - daily, 2 - weekly, 3 - monthly
   recurring: {
     type: Number
   }
