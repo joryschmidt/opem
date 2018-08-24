@@ -4,3 +4,17 @@
   margin: 0 auto;
   background-color: $color-primary;
 }
+
+.error {
+  width: 100vw;
+  
+  &__heading {
+    display: inline-block;
+    margin-left: 6rem;
+    margin-top: 6rem;
+    
+    color: white;
+    font-size: 5rem;
+    font-weight: 300;
+  }
+}

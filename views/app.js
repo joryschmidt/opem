@@ -7,15 +7,10 @@
         templateUrl: 'templates/home.html',
         controller: 'homeCtrl'
       })
-      .when('/login', {
-        templateUrl: 'templates/login.html',
-        controller: 'loginCtrl'
+      .when('/error', {
+        templateUrl: 'templates/error.html'
       })
-      .when('/signup', {
-        templateUrl: 'templates/signup.html',
-        controller: 'signupCtrl'
-      })
-      .otherwise({ redirectTo: '/login' });
+      .otherwise({ redirectTo: '/error' });
   }]);
   
   app.factory('hasRootUser', ['$rootScope', function($rootScope) {
@@ -29,4 +24,13 @@
       templateUrl: 'templates/_popup.html'
     }
   });
+  
+  app.run(['$http', function($http) {
+    $http.get('user').then(function() {
+      
+    }, function() {
+      window.location.href = '/login';
+    });
+  }]);
+  
 })();

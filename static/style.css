@@ -1,0 +1,121 @@
+:root {
+  --box-shadow: 0 .3rem .7rem rgba(0, 0, 0, 0.4); }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  font-family: 'Lato', sans-serif;
+  line-height: 1.7; }
+
+input, textarea {
+  font-size: 1.6rem;
+  font-family: 'Lato', sans-serif;
+  line-height: 1.7; }
+
+::selection {
+  background-color: #20bf6b;
+  color: white; }
+
+::-moz-selection {
+  background-color: #20bf6b;
+  color: white; }
+
+.container {
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  background-color: #20bf6b; }
+
+.login {
+  width: 50vw;
+  margin: 0 auto;
+  padding-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .login__logo {
+    display: block;
+    height: 4rem;
+    fill: white;
+    margin: 0 auto;
+    margin-bottom: 8rem; }
+  .login__heading {
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+    margin: 3rem 0;
+    letter-spacing: 1px;
+    cursor: default; }
+  .login__form {
+    display: flex;
+    flex-direction: column; }
+    .login__form-container {
+      width: 60rem;
+      margin: 0 auto;
+      background-color: white;
+      border-radius: 4px;
+      box-shadow: var(--box-shadow);
+      padding: 5rem 8rem; }
+  .login__btn {
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+    background-color: #20bf6b; }
+  .login__links {
+    width: 60rem;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem; }
+    .login__links--text {
+      cursor: default;
+      color: #ebebeb;
+      font-size: 1.4rem; }
+
+.signup {
+  width: 50vw;
+  margin: 0 auto;
+  padding-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .signup__logo {
+    display: block;
+    height: 4rem;
+    fill: white;
+    margin: 0 auto;
+    margin-bottom: 8rem; }
+  .signup__heading {
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+    margin: 3rem 0;
+    letter-spacing: 1px;
+    cursor: default;
+    font-size: 2.5rem;
+    font-weight: 300; }
+  .signup__form {
+    display: flex;
+    flex-direction: column; }
+    .signup__form-container {
+      width: 60rem;
+      margin: 0 auto;
+      background-color: white;
+      border-radius: 4px;
+      box-shadow: var(--box-shadow);
+      padding: 5rem 8rem; }
+  .signup__btn {
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+    background-color: #20bf6b; }
+  .signup__link {
+    margin-top: 2rem;
+    cursor: default;
+    font-size: 1.4rem;
+    color: #ebebeb; }

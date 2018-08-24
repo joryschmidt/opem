@@ -64,6 +64,19 @@ a:link, a:hover, a:visited, a:active {
   background-color: #20bf6b;
 }
 
+.error {
+  width: 100vw;
+}
+
+.error__heading {
+  display: inline-block;
+  margin-left: 6rem;
+  margin-top: 6rem;
+  color: white;
+  font-size: 5rem;
+  font-weight: 300;
+}
+
 .form__input {
   padding: 1.5rem;
   font-size: 1.4rem;
