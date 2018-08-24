@@ -30,7 +30,7 @@ exports.signup = function(req, res, next) {
     }
     else {
       console.log(user);
-      res.json(null);
+      res.redirect('/');
       next();
     }
   });
@@ -48,7 +48,7 @@ exports.login = function(req, res, next) {
       delete user.password;
       req.session.user = user;
       console.log('Login successful');
-      res.status(200).json(user);
+      res.redirect('/#!/dashboard');
       next();
     } else {
       console.log('Wrong password mate');
@@ -61,7 +61,7 @@ exports.login = function(req, res, next) {
 exports.logout = function(req, res) {
   req.session.reset();
   console.log('Logged out');
-  res.redirect('/#!/login');
+  res.redirect('/login');
 };
 
 // Get a JSON object representing the logged in user

@@ -36,9 +36,11 @@ app.use(sessions({
 }));
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 
+app.use('/login', express.static(path.join(__dirname, 'static', 'login.html')));
+app.use('/signup', express.static(path.join(__dirname, 'static', 'signup.html')));
 app.use(express.static(path.join(__dirname, 'views')));
 
 // app.use('/admin', requireAdmin, admin);

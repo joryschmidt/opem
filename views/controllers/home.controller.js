@@ -7,13 +7,14 @@ angular.module('opem')
   $http.get('/user').then(function(q) {
     $scope.user = q.data;
   }, function(response) {
-    $location.path('/login');
+    console.log('Sorry bub, but you have to sign up to see that page');
+    window.location.href = '/login';
   });
   
   $scope.logout = function() {
     $http.get('/logout').then(function(response) {
       delete $scope.user;
-      window.location.href = '/#!/login';
+      window.location.href = '/login';
       console.log('logged out');
     }, function() {
       console.log("couldn't log out");

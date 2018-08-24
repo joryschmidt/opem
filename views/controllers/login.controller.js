@@ -11,6 +11,12 @@ angular.module('opem')
       }
     });
   }
+  
+  $http.get('/user').then(function() {
+    
+  }, function() {
+    window.location.href = '/login';
+  });
 }])
 
 .controller('signupCtrl', ['$scope', '$http', '$location', function($scope, $http, $location) {
