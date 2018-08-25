@@ -11,6 +11,10 @@
         templateUrl: 'templates/home.html',
         controller: 'homeCtrl'
       })
+      .when('/hosted', {
+        templateUrl: 'templates/events.html',
+        controller: 'hostedCtrl'
+      })
       .when('/error', {
         templateUrl: 'templates/error.html'
       })

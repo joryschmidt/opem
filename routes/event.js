@@ -12,6 +12,10 @@ router.put('/', event_controller.updateEvent);
 
 router.delete('/:id', event_controller.deleteEvent);
 
+// Routes for specific actions
+
+router.get('/hosted/:id', event_controller.hostedEvents);
+
 module.exports = router;
 
 // Need routes to add and remove users from event/waitlist

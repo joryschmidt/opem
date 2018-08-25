@@ -311,7 +311,6 @@ a:link, a:hover, a:visited, a:active {
 
 .event-card {
   display: block;
-  margin: 50rem;
   cursor: default;
   width: 30rem;
   border-radius: 4px;
@@ -704,4 +703,8 @@ a:link, a:hover, a:visited, a:active {
   cursor: default;
   font-size: 1.4rem;
   color: #ebebeb;
+}
+
+.hosted__events {
+  padding: 6rem;
 }
