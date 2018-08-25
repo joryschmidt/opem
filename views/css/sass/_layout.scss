@@ -7,11 +7,12 @@
 
 .error {
   width: 100vw;
+  height: 100vh;
+  padding-top: 5rem;
   
   &__heading {
-    display: inline-block;
-    margin-left: 6rem;
-    margin-top: 6rem;
+    display: block;
+    text-align: center;
     
     color: white;
     font-size: 5rem;

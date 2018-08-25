@@ -3,5 +3,4 @@ hook up forms to angular
 
 finish web views
 mobile views
-refactor angular app to just the sidebar items use express to serve login and signup views
 google maps api

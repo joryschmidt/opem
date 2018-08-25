@@ -1,0 +1,79 @@
+.event-card {
+  display: block;
+  margin: 50rem;
+  cursor: default;
+  
+  
+  width: 30rem;
+  border-radius: $def-border-radius;
+  box-shadow: var(--box-shadow);
+  padding-top: 2rem;
+  
+  display: flex;
+  flex-direction: column;
+  font-size: 1.8rem;
+  
+  &__heading {
+    text-transform: uppercase;
+    margin-left: 2rem;
+    color: $color-grey-dark;
+  }
+  
+  &__venue {
+    margin-left: 2rem;
+    color: $color-primary;
+    margin-bottom: 1rem;
+  }
+  
+  &__date {
+    margin-left: 2rem;
+    
+    &--day {
+      
+    }
+    
+    &--calendar {
+      color: $color-grey;
+      margin-right: 4px;
+    }
+    
+    &--remaining {
+      color: $color-primary;
+    }
+    
+    &--time {
+      color: $color-grey;
+    }
+  }
+  
+  &__spots {
+    margin: 2rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-grey-light;
+    color: $color-grey-dark;
+    border-radius: $def-border-radius;
+  }
+  
+  &__view {
+    background-color: $color-primary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    width: 100%;
+    text-transform: uppercase;
+    color: white;
+    height: 6rem;
+    cursor: pointer;
+  }
+}
+
+.pencil-glyph {
+  display: inline-block;
+  transform: rotate(90deg);
+  margin-left: 1rem;
+  color: $color-grey;
+}

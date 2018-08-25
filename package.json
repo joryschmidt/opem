@@ -6,7 +6,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js"
-    "compile:sass": "node-sass style.scss style.css",
   },
   "author": "Jory Schmidt",
   "license": "ISC",
