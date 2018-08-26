@@ -6,6 +6,8 @@ var user_controller = require('../controllers/user.controller');
 // User read, update, delete
 router.get('/', user_controller.getUser);
 
+router.get('/current/:id', user_controller.getCurrentUser);
+
 router.put('/', user_controller.updateUser);
 
 router.delete('/:id', user_controller.deleteUser);

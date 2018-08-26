@@ -6,6 +6,7 @@ angular.module('opem')
   
   $http.get('/user').then(function(q) {
     $scope.user = q.data;
+    $scope.event.host = q.data._id;
   }, function(response) {
     console.log('Sorry bub, but you have to sign up to see that page');
     window.location.href = '/login';
@@ -22,6 +23,14 @@ angular.module('opem')
   };
   
   $scope.submit = function() {
-    
+    $http.post('/event', $scope.event).then(function(response) {
+      console.log('event has been created');
+      $scope.event = {};
+      jQuery('#popup2').css({ visibility: 'hidden', opacity: 0 });
+    }, function(err) {
+      console.log(err);
+      console.log('there was some frontend error creating the event');
+    });
   };
+  
 }]);

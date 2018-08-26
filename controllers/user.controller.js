@@ -71,6 +71,19 @@ exports.getUser = function(req, res) {
   else res.status(404).json(null);
 };
 
+// This one is for getting the user in her current state from the database
+exports.getCurrentUser = function(req, res) {
+  User.findOne({ _id: req.params.id }, function(err, user) {
+    if (err) {
+      console.log(err);
+      res.status(500).send("The user couldn't be found");
+    } else {
+      console.log(user);
+      res.json(user);
+    }
+  });
+};
+
 // Delete a user from the database
 exports.deleteUser = function(req, res) {
   User.findOneAndRemove({ _id: req.params.id }, function(err, user) {

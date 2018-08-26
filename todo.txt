@@ -1,6 +1,26 @@
-make create event form button display optional end time
-hook up forms to angular
+integrate XSRF security with angular $http
 
 finish web views
+create a few more events, get them with angular controllers, display them with ng-repeat, and minmax a responsive grid system
+create routes to add and remove users from events and events from users
+add signup date field to form
+
+add venue field to form
+
 mobile views
 google maps api
+
+Need designs for:
+- view of a single event
+- guest views
+- date for signup window
+
+- events should have a quick signup option for logged in users, either in view or on card
+
+
+
+
+
+
+Spot model may be unnecessary 
+make use of Date.prototype.toLocaleDateString() when dealing with dates, or find a good library

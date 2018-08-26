@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
+var Event = require('./Event.model');
 
 var SpotSchema = new Schema({
   user: {
@@ -18,6 +19,10 @@ var SpotSchema = new Schema({
 });
 
 var EventSchema = new Schema({
+  name: {
+    type: String,
+    required: true
+  },
   date: {
     type: Date,
     required: true
@@ -28,6 +33,14 @@ var EventSchema = new Schema({
   },
   time_end: {
     type: Date
+  },
+  signup_start: {
+    type: Date, 
+    required: true
+  },
+  signup_end: {
+    type: Date,
+    required: true
   },
   location: {
     type: String,
@@ -43,9 +56,19 @@ var EventSchema = new Schema({
     type: Number,
     required: true
   },
-  // 0 - non-recurring, 1 - daily, 2 - weekly, 3 - monthly
+  // Recurring means weekly
   recurring: {
-    type: Number
+    type: Boolean,
+    default: false
+  },
+  requestable: {
+    type: Boolean,
+    default: false
+  },
+  event_type: {
+    comedy: Boolean,
+    music: Boolean,
+    other: Boolean
   }
 });
 
