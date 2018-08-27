@@ -314,7 +314,7 @@ a:link, a:hover, a:visited, a:active {
   display: block;
   cursor: default;
   position: relative;
-  width: 30rem;
+  width: 100%;
   border-radius: 4px;
   box-shadow: var(--box-shadow);
   padding-top: 2rem;
@@ -380,6 +380,11 @@ a:link, a:hover, a:visited, a:active {
   color: white;
   height: 6rem;
   cursor: pointer;
+  transition: background-color 0.2s ease-out;
+}
+
+.event-card__view:hover {
+  background-color: #24d577;
 }
 
 .pencil-glyph {
@@ -388,6 +393,12 @@ a:link, a:hover, a:visited, a:active {
   color: #dedede;
   top: 1rem;
   right: 1rem;
+  cursor: pointer;
+  transition: color 0.2s ease-out;
+}
+
+.pencil-glyph:hover {
+  color: #b8b8b8;
 }
 
 .drop {
@@ -742,6 +753,7 @@ a:link, a:hover, a:visited, a:active {
 .hosted__events {
   padding: 6rem;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(32rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(28rem, 1fr));
   grid-row-gap: 2.5rem;
+  grid-column-gap: 2.5rem;
 }

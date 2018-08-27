@@ -4,7 +4,8 @@
   position: relative;
   
   
-  width: 30rem;
+  // width: 30rem;
+  width: 100%;
   border-radius: $def-border-radius;
   box-shadow: var(--box-shadow);
   padding-top: 2rem;
@@ -75,6 +76,11 @@
     color: white;
     height: 6rem;
     cursor: pointer;
+    transition: background-color 0.2s ease-out;
+    
+    &:hover {
+      background-color: lighten($color-primary, 5%);
+    }
   }
 }
 
@@ -84,4 +90,10 @@
   color: $color-grey;
   top: 1rem;
   right: 1rem;
+  cursor: pointer;
+  transition: color 0.2s ease-out;
+  
+  &:hover {
+    color: darken($color-grey, 15%);
+  }
 }

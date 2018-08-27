@@ -18,7 +18,7 @@
       .when('/error', {
         templateUrl: 'templates/error.html'
       })
-      .otherwise({ redirectTo: '/error' });
+      .otherwise({ redirectTo: '/' });
   }]);
   
   app.factory('hasRootUser', ['$rootScope', function($rootScope) {
@@ -40,16 +40,21 @@
     }
   });
   
-  app.controller('redirect', [function() {
-    window.location.href = '/login';
-  }]);
-  
-  app.run(['$http', function($http) {
-    $http.get('/user').then(function(user) {
-      
+  // redirects user to dashboard if logged in, to the login page otherwise
+  app.controller('redirect', ['$http', function($http) {
+    $http.get('/user').then(function() {
+      window.location.href = '/#!/dashboard'
     }, function() {
       window.location.href = '/login';
     });
   }]);
+  
+  // app.run(['$http', function($http) {
+  //   $http.get('/user').then(function(user) {
+      
+  //   }, function() {
+  //     window.location.href = '/login';
+  //   });
+  // }]);
   
 })();

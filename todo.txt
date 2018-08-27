@@ -1,11 +1,10 @@
 integrate XSRF security with angular $http
 
 finish web views
-create a few more events, get them with angular controllers, display them with ng-repeat, and minmax a responsive grid system
 create routes to add and remove users from events and events from users
-add signup date field to form
+add search functionality
+integrate home page to make angular app for sidebar links. I'll have to push some home controller logic outside of angular to work the navbar
 
-add venue field to form
 
 mobile views
 google maps api
@@ -14,13 +13,18 @@ Need designs for:
 - view of a single event
 - guest views
 - date for signup window
+- event signup form for guest
+- need svg of edit event pencil
 
 - events should have a quick signup option for logged in users, either in view or on card
 
-
-
-
+ask lenny if he wants the event cards to all be the same height
+ask lenny what checked checkboxes should look like
+ask about favorites category in design
+add signup date field to form
+add venue field to form
+recurring checkbox needs to be more specifc, or specifically for weekly events only
+number of spots, dropdown or enter a number?
 
 
 Spot model may be unnecessary 
-make use of Date.prototype.toLocaleDateString() when dealing with dates, or find a good library

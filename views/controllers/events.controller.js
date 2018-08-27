@@ -23,7 +23,12 @@ angular.module('opem')
         e.calendar = date.toLocaleDateString('en-US', date_options);
         
         var start = new Date(e.time_start);
-        e.time = start.toLocaleTimeString('en-US', time_options);
+        e.start = start.toLocaleTimeString('en-US', time_options);
+        
+        if (e.time_end) {
+          var end = new Date(e.time_end);
+          e.end = end.toLocaleTimeString('en-US', time_options);
+        }
         
         e.spots_left = e.spots - e.attendees.length;
       });

@@ -1,4 +1,5 @@
 var User = require('../models/User.model');
+var Event = require('../models/Event.model');
 var bcrypt = require('bcrypt');
 var md5 = require('md5');
 
@@ -73,11 +74,12 @@ exports.getUser = function(req, res) {
 
 // This one is for getting the user in her current state from the database
 exports.getCurrentUser = function(req, res) {
-  User.findOne({ _id: req.params.id }, function(err, user) {
+  User.findOne({ _id: req.session.user._id }, function(err, user) {
     if (err) {
       console.log(err);
       res.status(500).send("The user couldn't be found");
     } else {
+      delete user.password;
       console.log(user);
       res.json(user);
     }
@@ -113,6 +115,30 @@ exports.updateUser = function(req, res) {
     } else {
       console.log(user);
       res.send('The user has been successfully updated');
+    }
+  });
+};
+
+// requires an object with user_id and event_id fields
+// needs logic to add to waitlist if event is full
+exports.eventSignup = function(req, res) {
+  var user_id = req.body.user_id;
+  var event_id = req.body.event_id;
+  
+  User.update({ _id: user_id }, { $push: { events: event_id }}, function(err, user) {
+    if (err) {
+      console.log(err);
+      res.status(500).send('There was a problem signing up');
+    } else {
+      Event.update({ _id: event_id }, { $push: { attendees: user_id }}, function(err, event) {
+        if (err) {
+          console.log(err);
+          res.status(500).send('There was a problem adding user to event');
+        } else {
+          console.log(user);
+          res.json(event);
+        }
+      });
     }
   });
 };

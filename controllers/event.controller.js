@@ -1,5 +1,8 @@
 var Event = require('../models/Event.model');
 var User = require('../models/User.model');
+var callbacks = require('./callbacks');
+var done = callbacks.done;
+var jdone = callbacks.jdone;
 
 exports.getEvent = function(req, res, next) {
   Event.findOne({ _id: req.params.id }, function(err, event) {
@@ -95,14 +98,20 @@ exports.deleteEvent = function(req, res) {
   });
 };
 
+// returns events hosted by currently logged in user
 exports.hostedEvents = function(req, res) {
   Event.find({ host: req.params.id }).sort({ date: 1 }).exec(function(err, events) {
     if (err) {
       console.log(err);
       res.status(500).send('Events could not be found');
     } else {
-      console.log(events);
       res.json(events);
     }
   });
 };
+
+// allows guest to sign up for event. 
+// CHECK IF CALLBACK WORKS
+exports.guestSignUp = function(req, res) {
+  Event.find({ _id: req.body.event_id }, { $push: { attendees: req.body.name }}, done(err, event, req, res, 'There was a problem registering guest', 'Guest successfully registered'));
+}

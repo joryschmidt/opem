@@ -6,7 +6,9 @@ var user_controller = require('../controllers/user.controller');
 // User read, update, delete
 router.get('/', user_controller.getUser);
 
-router.get('/current/:id', user_controller.getCurrentUser);
+router.get('/current/', user_controller.getCurrentUser);
+
+router.post('/event/:id', user_controller.eventSignup);
 
 router.put('/', user_controller.updateUser);
 

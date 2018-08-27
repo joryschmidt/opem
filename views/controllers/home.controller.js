@@ -4,9 +4,8 @@ angular.module('opem')
   
   $scope.event = {};
   
-  $http.get('/user').then(function(q) {
+  $http.get('/user/current').then(function(q) {
     var user = q.data;
-    console.log(user);
     $scope.user = user;
     $scope.event.host = user._id;
     
