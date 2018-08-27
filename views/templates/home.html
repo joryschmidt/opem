@@ -15,7 +15,7 @@
   
   <div class="home__content">
     <div class="sidebar">
-      <a href="#!/dashboard" class="sidebar__item">
+      <a href="#!/dashboard" class="sidebar__item sidebar__active">
         <svg class="sidebar__icon"><use href="img/sprite.svg#home"></use></svg>
         <span class="sidebar__text">Home</span>
       </a>
@@ -25,10 +25,12 @@
       </a>
       <a href="#!/dashboard" class="sidebar__item">
         <svg class="sidebar__icon"><use href="img/sprite.svg#my-open-mics"></use></svg>
+        <div class="sidebar__icon--notification" id="my-open-mics-notification"></div>
         <span class="sidebar__text">My Open Mics</span>
       </a>
       <a href="#!/hosted" class="sidebar__item">
         <svg class="sidebar__icon"><use href="img/sprite.svg#hosted-by-me"></use></svg>
+        <div class="sidebar__icon--notification" id="hosted-notification"></div>
         <span class="sidebar__text">Hosted By Me</span>
       </a>
     </div>

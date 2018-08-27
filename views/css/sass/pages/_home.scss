@@ -194,6 +194,8 @@
     display: flex;
     align-items: center;
     transition: all .2s;
+    position: relative;
+    
     
     &:hover {
       background-color: $color-grey;
@@ -204,6 +206,23 @@
     height: 2.5rem;
     width: 2.5rem;
     fill: $color-secondary;
+    
+    &--notification {
+      width: 1.8rem;
+      height: 1.8rem;
+      position: absolute;
+      top: 1.3rem;
+      left: 3rem;
+      
+      display: none;
+      justify-content: center;
+      align-items: center;
+      
+      background-color: $color-primary;
+      border-radius: 10rem;
+      color: white;
+      font-size: 1.2rem;
+    }
   }
   
   &__text {
@@ -211,4 +230,12 @@
     margin-left: 2rem;
     color: $color-secondary;
   }
+  
+  &__active {
+    background-color: $color-grey;
+  }
+}
+
+#end_time--button {
+  cursor: pointer;
 }

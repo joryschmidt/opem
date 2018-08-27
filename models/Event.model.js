@@ -27,6 +27,10 @@ var EventSchema = new Schema({
     type: Date,
     required: true
   },
+  date_created: {
+    type: Date,
+    default: Date.now
+  },
   time_start: {
     type: Date,
     required: true

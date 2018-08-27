@@ -95,9 +95,8 @@ exports.deleteEvent = function(req, res) {
   });
 };
 
-// this query will probably be faster if taken straight from the users host array
 exports.hostedEvents = function(req, res) {
-  Event.find({ host: req.params.id }, function(err, events) {
+  Event.find({ host: req.params.id }).sort({ date: 1 }).exec(function(err, events) {
     if (err) {
       console.log(err);
       res.status(500).send('Events could not be found');

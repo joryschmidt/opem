@@ -1,6 +1,7 @@
 .event-card {
   display: block;
   cursor: default;
+  position: relative;
   
   
   width: 30rem;
@@ -13,15 +14,22 @@
   font-size: 1.8rem;
   
   &__heading {
-    text-transform: uppercase;
-    margin-left: 2rem;
-    color: $color-grey-dark;
+    display: flex;
+    width: 100%;
+    
+    &--text {
+      max-width: 80%;
+      text-transform: uppercase;
+      margin-left: 2rem;
+      color: $color-grey-dark;
+    }
   }
   
   &__venue {
     margin-left: 2rem;
     color: $color-primary;
     margin-bottom: 1rem;
+    max-width: 70%;
   }
   
   &__date {
@@ -71,8 +79,9 @@
 }
 
 .pencil-glyph {
-  display: inline-block;
   transform: rotate(90deg);
-  margin-left: 1rem;
+  position: absolute;
   color: $color-grey;
+  top: 1rem;
+  right: 1rem;
 }
