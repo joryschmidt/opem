@@ -4,24 +4,23 @@ angular.module('opem')
   
   $scope.event = {};
   
-  $http.get('/user/current').then(function(q) {
-    var user = q.data;
-    $scope.user = user;
-    $scope.event.host = user._id;
-    
-    // this makes the notification show up
-    if (user.hosted_events.length > 0) {
-      jQuery('#hosted-notification').css('display', 'flex');
-      document.getElementById('hosted-notification').innerText = user.hosted_events.length.toString();
-    }
-    
-    
-    
-    
-  }, function(response) {
-    console.log('Sorry bub, but you have to sign up to see that page');
-    window.location.href = '/login';
-  });
+  var getUserData = function() {
+    $http.get('/user/current').then(function(q) {
+      var user = q.data;
+      $scope.user = user;
+      $scope.event.host = user._id;
+      
+      // this makes the notification show up
+      if (user.hosted_events.length > 0) {
+        jQuery('#hosted-notification').css('display', 'flex');
+        document.getElementById('hosted-notification').innerText = user.hosted_events.length.toString();
+      }
+    }, function(response) {
+      console.log('Sorry bub, but you have to sign up to see that page');
+      window.location.href = '/login';
+    });
+  };
+  getUserData();
   
   $scope.logout = function() {
     $http.get('/logout').then(function(response) {
@@ -39,6 +38,7 @@ angular.module('opem')
       $scope.event = {};
       // Closes the popup if it was successfully saved
       jQuery('#popup2').css({ visibility: 'hidden', opacity: 0 });
+      getUserData();
     }, function(err) {
       console.log(err);
       console.log('there was some frontend error creating the event');
