@@ -36,4 +36,15 @@ angular.module('opem')
       $scope.events = events;
     });
   });
+  
+  
+  $scope.logout = function() {
+    $http.get('/logout').then(function(response) {
+      delete $scope.user;
+      window.location.href = '/login';
+      console.log('logged out');
+    }, function() {
+      console.log("couldn't log out");
+    });
+  };
 }]);
