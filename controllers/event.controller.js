@@ -16,6 +16,7 @@ exports.getEvent = function(req, res, next) {
   });
 };
 
+// Create an event, logs to server console
 exports.createEvent = function(req, res, next) {
   var newEvent = new Event();
   
