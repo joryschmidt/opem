@@ -39,9 +39,9 @@
       <div class="home__events">
         <div class="home__events__search-bar">
           <svg class="home__events__search-bar-icon"><use href="img/sprite.svg#search"></use></svg>
-          <input type="text" name="search--venue" class="awesomplete  search-bar search-bar--venue" id="search--venue" placeholder="Search for event" />
+          <input type="text" name="search--venue" class="awesomplete  search-bar search-bar--venue" id="search--venue" placeholder="Search for event" ng-model="search_name" />
         </div>
-        <div class="btn home__events__btn home__events__btn--search">Search</div>
+        <div class="btn home__events__btn home__events__btn--search" ng-click="eventSearch()" id="search-event-button">Search</div>
         <span class="home__events--span">or</span>
         <div class="btn home__events__btn home__events__btn--host" id="host-event">Host An Event</div>
       </div>
@@ -87,3 +87,14 @@
     console.log(err);
   });
 </script>
+
+<!--this script allows user to hit enter when focused on search bar to submit-->
+<!--it's not updating ng-model when awesomplete does with this script on, so i'll hve to fix that before implementation-->
+
+<!--<script type="text/javascript">-->
+<!--  $('#search--venue').keypress(function(e) {-->
+<!--    if (e.which == 13) {-->
+<!--      $('#search-event-button').click();-->
+<!--    }-->
+<!--  });-->
+<!--</script>-->

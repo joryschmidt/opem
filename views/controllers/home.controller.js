@@ -45,4 +45,13 @@ angular.module('opem')
     });
   };
   
+  $scope.eventSearch = function() {
+    console.log($scope.search_name);
+    $http.post('/event/search/name', { name: $scope.search_name }).then(function(events) {
+      console.log(events);
+    }, function() {
+      console.log('Failure finding event');
+    });
+  }
+  
 }]);

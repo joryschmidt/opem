@@ -2,7 +2,7 @@ integrate XSRF security with angular $http
 
 finish web views
 create routes to add and remove users from events and events from users
-add search functionality
+add search functionality - make events searchable for part of a name with mongoose
 integrate home page to make angular app for sidebar links. I'll have to push some home controller logic outside of angular to work the navbar
 
 

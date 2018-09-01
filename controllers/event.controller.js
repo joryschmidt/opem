@@ -101,7 +101,7 @@ exports.deleteEvent = function(req, res) {
 
 // returns events hosted by currently logged in user
 exports.hostedEvents = function(req, res) {
-  Event.find({ host: req.params.id }).sort({ date: 1 }).exec(function(err, events) {
+  Event.find({ host: req.params.id }).lean().sort({ date: 1 }).exec(function(err, events) {
     if (err) {
       console.log(err);
       res.status(500).send('Events could not be found');
@@ -127,3 +127,15 @@ exports.getAll = function(req, res) {
 exports.guestSignUp = function(req, res) {
   Event.find({ _id: req.body.event_id }, { $push: { attendees: req.body.name }}, done(err, event, req, res, 'There was a problem registering guest', 'Guest successfully registered'));
 };
+
+exports.eventSearchName =function(req, res) {
+  Event.find({ name: req.body.name }, function(err, events) {
+    if (err) {
+      console.log('error retrieving event');
+      res.status(500).send('There was an error');
+    }
+    else {
+      res.json(events);
+    }
+  });
+}
