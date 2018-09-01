@@ -80,7 +80,6 @@ exports.getCurrentUser = function(req, res) {
       res.status(500).send("The user couldn't be found");
     } else {
       delete user.password;
-      console.log(user);
       res.json(user);
     }
   });

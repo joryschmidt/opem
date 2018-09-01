@@ -401,6 +401,41 @@ a:link, a:hover, a:visited, a:active {
   color: #b8b8b8;
 }
 
+.search-bar {
+  outline: none;
+  border: none;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: #c5c5c5;
+}
+
+.awesomplete li {
+  color: #c5c5c5;
+}
+
+.awesomplete li:hover {
+  color: white !important;
+  background-color: #20bf6b !important;
+}
+
+.awesomplete li:hover mark {
+  background: none;
+  color: white;
+}
+
+.awesomplete mark {
+  color: #c5c5c5;
+  background: none;
+}
+
+.awesomplete li[aria-selected="true"] mark {
+  background: none;
+}
+
+.awesomplete > ul > li[aria-selected="true"] {
+  background-color: #20bf6b;
+}
+
 .drop {
   transform: translateY(7rem);
 }

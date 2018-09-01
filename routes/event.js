@@ -3,6 +3,9 @@ var router = express.Router();
 
 var event_controller = require('../controllers/event.controller');
 
+// Get all events
+router.get('/all', event_controller.getAll);
+
 // Event create, read, update, destroy
 router.get('/:id', event_controller.getEvent);
 
@@ -14,7 +17,9 @@ router.delete('/:id', event_controller.deleteEvent);
 
 // Routes for specific actions
 
+// Get all events hosted by user 
 router.get('/hosted/:id', event_controller.hostedEvents);
+
 
 module.exports = router;
 

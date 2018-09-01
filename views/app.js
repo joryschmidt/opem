@@ -4,7 +4,7 @@
   app.config(['$routeProvider', '$locationProvider', '$rootScopeProvider', function($routeProvider, $locationProvider, $rootScopeProvider) {
     $routeProvider
       .when('/', {
-        template: '<span>Redirecting...</span>',
+        template: '',
         controller: 'redirect'
       })
       .when('/dashboard', {

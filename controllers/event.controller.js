@@ -111,8 +111,19 @@ exports.hostedEvents = function(req, res) {
   });
 };
 
+exports.getAll = function(req, res) {
+  Event.find({}, 'name -_id').lean().exec(function(err, events) {
+    if (err) {
+      console.log(err);
+      res.status(500).send('There was an error gettings events');
+    } else {
+      res.json(events);
+    }
+  });
+};
+
 // allows guest to sign up for event. 
 // CHECK IF CALLBACK WORKS
 exports.guestSignUp = function(req, res) {
   Event.find({ _id: req.body.event_id }, { $push: { attendees: req.body.name }}, done(err, event, req, res, 'There was a problem registering guest', 'Guest successfully registered'));
-}
+};
