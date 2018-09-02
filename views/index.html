@@ -10,6 +10,7 @@
       
       <title>Open MIC</title>
     </head>
+    
     <body ng-app="opem">
       <div class="container">
         <div class="main-view">
@@ -67,43 +68,6 @@
       <script type="text/javascript" src="controllers/login.controller.js"></script>
       <script type="text/javascript" src="controllers/events.controller.js"></script>
       
-      
-      <!--makes navbar dropdown-->
-      <script type="text/javascript">
-        $(document).ready(function() {
-          $('.user-menu').on('mouseenter', function() { $('.dropdown').addClass('drop'); });
-          $('.dropdown').on('mouseenter', function() { $('.user-menu').addClass('darken'); });
-          $('.user-menu').on('mouseleave', function() { $('.dropdown').removeClass('drop'); });
-          $('.dropdown').on('mouseleave', function() { $('.user-menu').removeClass('darken'); });
-        });
-      </script>
-      
-      <!--highlights active navbar link-->
-      <script type="text/javascript">
-        $(document).ready(function() {
-          $('.sidebar__item').on('click', function(event) {
-            $('.sidebar__item').removeClass('sidebar__active');
-            $(this).addClass('sidebar__active');
-          });
-          
-          $('.logo-container').click(function(event) {
-            $('.sidebar__item').removeClass('sidebar__active');
-            $('.sidebar__item').first().addClass('sidebar__active');
-          });
-        });
-      </script>
-      
-      <!--populates navbar with user info-->
-      <script type="text/javascript">
-        $(document).ready(function() {
-          axios.get('/user').then(function(response) {
-            var user = response.data;
-            console.log(user.username);
-            user.gravatar += '?d=identicon';
-            $('#user-photo').attr('src', user.gravatar);
-            document.getElementById('user-name').innerText = user.username;
-          });
-        });
-      </script>
+      <script type="text/javascript" src="js/index.js"></script>
     </body>
 </html>
