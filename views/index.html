@@ -11,9 +11,49 @@
       <title>Open MIC</title>
     </head>
     <body ng-app="opem">
-      
       <div class="container">
-        <div ng-view></div>
+        <div class="main-view">
+          <nav class="nav">
+            <div class="logo-container">
+              <a href="/"><svg class="logo"><use href="img/sprite.svg#logo"></use></svg></a>
+            </div>
+            <div class="user-menu">
+              <div class="user-menu__photo-container"><img class='user-menu__photo' id="user-photo" alt="User photo"></div>
+              <div class="user-menu__name" id="user-name"></div>
+              <svg class="user-menu__caret"><use href="img/sprite.svg#downward-carrot"></use></svg>
+            </div>
+          </nav>
+          <div class="dropdown">
+            <a class="dropdown-item" href="/logout">Logout</a>
+          </div>
+          
+          <div class="content">
+            <div class="sidebar">
+              <a href="#!/dashboard" class="sidebar__item sidebar__active">
+                <svg class="sidebar__icon"><use href="img/sprite.svg#home"></use></svg>
+                <span class="sidebar__text">Home</span>
+              </a>
+              <a href="#!/dashboard" class="sidebar__item">
+                <svg class="sidebar__icon"><use href="img/sprite.svg#near-me"></use></svg>
+                <span class="sidebar__text">Events Near Me</span>
+              </a>
+              <a href="#!/dashboard" class="sidebar__item">
+                <svg class="sidebar__icon"><use href="img/sprite.svg#my-open-mics"></use></svg>
+                <div class="sidebar__icon--notification" id="my-open-mics-notification"></div>
+                <span class="sidebar__text">My Open Mics</span>
+              </a>
+              <a href="#!/hosted" class="sidebar__item">
+                <svg class="sidebar__icon"><use href="img/sprite.svg#hosted-by-me"></use></svg>
+                <div class="sidebar__icon--notification" id="hosted-notification"></div>
+                <span class="sidebar__text">Hosted By Me</span>
+              </a>
+            </div>
+          
+            <div class="content__main">
+              <div ng-view></div>
+            </div>
+          </div>
+        </div>
       </div>
       
       <script type="text/javascript" src="vendor/awesomplete/awesomplete.min.js"></script>
@@ -26,5 +66,44 @@
       <script type="text/javascript" src="controllers/home.controller.js"></script>
       <script type="text/javascript" src="controllers/login.controller.js"></script>
       <script type="text/javascript" src="controllers/events.controller.js"></script>
+      
+      
+      <!--makes navbar dropdown-->
+      <script type="text/javascript">
+        $(document).ready(function() {
+          $('.user-menu').on('mouseenter', function() { $('.dropdown').addClass('drop'); });
+          $('.dropdown').on('mouseenter', function() { $('.user-menu').addClass('darken'); });
+          $('.user-menu').on('mouseleave', function() { $('.dropdown').removeClass('drop'); });
+          $('.dropdown').on('mouseleave', function() { $('.user-menu').removeClass('darken'); });
+        });
+      </script>
+      
+      <!--highlights active navbar link-->
+      <script type="text/javascript">
+        $(document).ready(function() {
+          $('.sidebar__item').on('click', function(event) {
+            $('.sidebar__item').removeClass('sidebar__active');
+            $(this).addClass('sidebar__active');
+          });
+          
+          $('.logo-container').click(function(event) {
+            $('.sidebar__item').removeClass('sidebar__active');
+            $('.sidebar__item').first().addClass('sidebar__active');
+          });
+        });
+      </script>
+      
+      <!--populates navbar with user info-->
+      <script type="text/javascript">
+        $(document).ready(function() {
+          axios.get('/user').then(function(response) {
+            var user = response.data;
+            console.log(user.username);
+            user.gravatar += '?d=identicon';
+            $('#user-photo').attr('src', user.gravatar);
+            document.getElementById('user-name').innerText = user.username;
+          });
+        });
+      </script>
     </body>
 </html>

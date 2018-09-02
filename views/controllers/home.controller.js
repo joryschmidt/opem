@@ -46,6 +46,7 @@ angular.module('opem')
     });
   };
   
+  // this will eventually redirect to search results page, most likely
   $scope.eventSearch = function() {
     console.log($scope.search_name);
     $http.post('/event/search/name', { name: $scope.search_name }).then(function(events) {

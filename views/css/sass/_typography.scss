@@ -19,3 +19,11 @@ a:link, a:hover, a:visited, a:active {
   outline: none;
   color: inherit;
 }
+
+.drop {
+  transform: translateY(7rem);
+}
+
+.darken {
+  background-color: darken($color-secondary, 10%);
+}

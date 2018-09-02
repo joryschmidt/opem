@@ -1,81 +1,21 @@
 <div class="home">
-  <nav class="nav">
-    <div class="logo-container">
-      <a href="/"><svg class="logo"><use href="img/sprite.svg#logo"></use></svg></a>
-    </div>
-    <div class="user-menu">
-      <div class="user-menu__photo-container"><img class='user-menu__photo' ng-src="{{ user.gravatar }}?d=identicon" alt="User photo"></div>
-      <div class="user-menu__name">{{ user.username }}</div>
-      <svg class="user-menu__caret"><use href="img/sprite.svg#downward-carrot"></use></svg>
-    </div>
-  </nav>
-  <div class="dropdown">
-    <span class="dropdown-item" ng-click="logout()">Logout</span>
+  <div class="home__search-bar">
+    <svg class="home__search-bar-icon"><use href="img/sprite.svg#search"></use></svg>
+    <input type="text" name="search--venue" class="awesomplete  search-bar search-bar--venue" id="search--venue" placeholder="Search for event" ng-model="search_name" />
   </div>
-  
-  <div class="home__content">
-    <div class="sidebar">
-      <a href="#!/dashboard" class="sidebar__item sidebar__active">
-        <svg class="sidebar__icon"><use href="img/sprite.svg#home"></use></svg>
-        <span class="sidebar__text">Home</span>
-      </a>
-      <a href="#!/dashboard" class="sidebar__item">
-        <svg class="sidebar__icon"><use href="img/sprite.svg#near-me"></use></svg>
-        <span class="sidebar__text">Events Near Me</span>
-      </a>
-      <a href="#!/dashboard" class="sidebar__item">
-        <svg class="sidebar__icon"><use href="img/sprite.svg#my-open-mics"></use></svg>
-        <div class="sidebar__icon--notification" id="my-open-mics-notification"></div>
-        <span class="sidebar__text">My Open Mics</span>
-      </a>
-      <a href="#!/hosted" class="sidebar__item">
-        <svg class="sidebar__icon"><use href="img/sprite.svg#hosted-by-me"></use></svg>
-        <div class="sidebar__icon--notification" id="hosted-notification"></div>
-        <span class="sidebar__text">Hosted By Me</span>
-      </a>
-    </div>
-    
-    <div class="home__content__main">
-      <div class="home__events">
-        <div class="home__events__search-bar">
-          <svg class="home__events__search-bar-icon"><use href="img/sprite.svg#search"></use></svg>
-          <input type="text" name="search--venue" class="awesomplete  search-bar search-bar--venue" id="search--venue" placeholder="Search for event" ng-model="search_name" />
-        </div>
-        <div class="btn home__events__btn home__events__btn--search" ng-click="eventSearch()" id="search-event-button">Search</div>
-        <span class="home__events--span">or</span>
-        <div class="btn home__events__btn home__events__btn--host" id="host-event">Host An Event</div>
-      </div>
-      
-      <popup></popup>
-      
-    </div>
-  </div>
+  <div class="btn home__btn home__btn--search" ng-click="eventSearch()" id="search-event-button">Search</div>
+  <span class="home--span">or</span>
+  <div class="btn home__btn home__btn--host" id="host-event">Host An Event</div>
 </div>
 
-<!--makes the dropdown menu work and it has to go here-->
+<popup></popup>
+
+<!--Allows popup to show-->
 <script type="text/javascript">
-  $('.user-menu').on('mouseenter', function() {
-    $('.dropdown').addClass('drop');
-  });
-  
-  $('.dropdown').on('mouseenter', function() {
-    $('.user-menu').addClass('darken');
-  }); 
-  
-  $('.user-menu').on('mouseleave', function() {
-    $('.dropdown').removeClass('drop');
-  });
-  
-  $('.dropdown').on('mouseleave', function() {
-    $('.user-menu').removeClass('darken');
-  }); 
-  
-  $('#host-event').on('click', function() {
-    $('#popup1').css({ visibility: 'visible', opacity: 1 });
-  });
+  $('#host-event').on('click', function() { $('#popup1').css({ visibility: 'visible', opacity: 1 }); });
 </script>
 
-<!--This script is to makes the search bar work-->
+<!--This script makes the search bar work-->
 <script type="text/javascript">
   var inp = document.getElementById('search--venue');
   var awesomplete = new Awesomplete(inp);
