@@ -6,6 +6,8 @@ add .catch error routing for axios
 integrate database login, signup, event creation errors into popup notifications
 look up how to inject data from one angular view into another for search results
 refactor hosted events markup into events display partial
+move notification icon logic outside angular home controller
+implement hamburger icon animation
 
 
 mobile views

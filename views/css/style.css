@@ -12,6 +12,18 @@ html {
   font-size: 62.5%;
 }
 
+@media only screen and (max-width: 50em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+  html {
+    font-size: 50%;
+  }
+}
+
 body {
   box-sizing: border-box;
   font-size: 1.6rem;
@@ -78,13 +90,14 @@ input[type="date"]::-webkit-inner-spin-button {
 
 .main-view {
   background-color: white;
-  height: 100vh;
+  height: 100%;
   position: relative;
 }
 
 .content {
-  height: 100%;
+  height: calc(100% - 7rem);
   display: flex;
+  position: relative;
 }
 
 @media only screen and (max-width: 68.75em) {
@@ -96,6 +109,7 @@ input[type="date"]::-webkit-inner-spin-button {
 .content__main {
   position: relative;
   width: 100%;
+  height: 100%;
 }
 
 .nav {
@@ -117,6 +131,13 @@ input[type="date"]::-webkit-inner-spin-button {
   transform: translateY(4px);
 }
 
+@media only screen and (max-width: 50em) {
+  .nav .logo {
+    height: 3rem;
+    width: 12rem;
+  }
+}
+
 .nav .logo-container {
   height: 7rem;
   transition: all .2s;
@@ -131,11 +152,65 @@ input[type="date"]::-webkit-inner-spin-button {
 }
 
 .nav .user-menu {
-  display: flex;
   height: 7rem;
   margin-top: -1.5rem;
   cursor: pointer;
   transition: background-color .2s;
+}
+
+.nav .user-menu--large {
+  display: flex;
+  padding-top: 1rem;
+}
+
+@media only screen and (max-width: 50em) {
+  .nav .user-menu--large {
+    display: none;
+  }
+}
+
+.nav .user-menu--mobile {
+  display: none;
+  height: 100%;
+  width: 7rem;
+}
+
+.nav .user-menu--mobile__icon {
+  position: relative;
+}
+
+.nav .user-menu--mobile__icon, .nav .user-menu--mobile__icon::after, .nav .user-menu--mobile__icon::before {
+  height: 2px;
+  width: 2.5rem;
+  background-color: #ebebeb;
+}
+
+.nav .user-menu--mobile__icon::before, .nav .user-menu--mobile__icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.nav .user-menu--mobile__icon::before {
+  top: -.6rem;
+}
+
+.nav .user-menu--mobile__icon::after {
+  top: .7rem;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .nav .user-menu--mobile__icon::after {
+    top: .6rem;
+  }
+}
+
+@media only screen and (max-width: 50em) {
+  .nav .user-menu--mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .nav .user-menu__photo {
@@ -210,9 +285,18 @@ input[type="date"]::-webkit-inner-spin-button {
 
 @media only screen and (max-width: 68.75em) {
   .sidebar {
+    height: auto;
     width: 100%;
-    flex-direction: row;
-    justify-content: space-between;
+    display: grid;
+    grid-template: 6rem/repeat(4, 1fr);
+    grid-column-gap: .2rem;
+    background-color: white;
+  }
+}
+
+@media only screen and (max-width: 50em) {
+  .sidebar {
+    grid-template-rows: 8rem;
   }
 }
 
@@ -222,6 +306,20 @@ input[type="date"]::-webkit-inner-spin-button {
   align-items: center;
   transition: all .2s;
   position: relative;
+}
+
+@media only screen and (max-width: 68.75em) {
+  .sidebar__item {
+    background-color: #ebebeb;
+  }
+}
+
+@media only screen and (max-width: 50em) {
+  .sidebar__item {
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+  }
 }
 
 .sidebar__item:hover {
@@ -249,10 +347,31 @@ input[type="date"]::-webkit-inner-spin-button {
   font-size: 1.2rem;
 }
 
+@media only screen and (max-width: 50em) {
+  .sidebar__icon--notification {
+    top: .5rem;
+    left: 10.5rem;
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+  .sidebar__icon--notification {
+    top: .8rem;
+    left: 9rem;
+  }
+}
+
 .sidebar__text {
   font-size: 1.4rem;
   margin-left: 2rem;
   color: #51606b;
+}
+
+@media only screen and (max-width: 50em) {
+  .sidebar__text {
+    margin-left: 0;
+    margin-top: .5rem;
+  }
 }
 
 .sidebar__active {
@@ -303,6 +422,12 @@ input[type="date"]::-webkit-inner-spin-button {
   text-align: center;
 }
 
+@media only screen and (max-width: 93.75em) {
+  .popup__heading {
+    margin: 1.5rem auto;
+  }
+}
+
 .popup__content {
   width: 110rem;
   position: absolute;
@@ -319,8 +444,12 @@ input[type="date"]::-webkit-inner-spin-button {
     top: 0;
     right: 0;
     width: 100%;
+    height: 100%;
     border-radius: 0;
     box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 }
 
@@ -441,6 +570,12 @@ input[type="date"]::-webkit-inner-spin-button {
   cursor: pointer;
   margin-top: 3.5rem;
   padding: 0 3rem;
+}
+
+@media only screen and (max-width: 93.75em) {
+  .popup__nav {
+    margin-top: 1rem;
+  }
 }
 
 .popup__nav__text {

@@ -7,13 +7,15 @@
 
 .main-view {
   background-color: white;
-  height: 100vh;
+  height: 100%;
   position: relative;
 }
 
 .content {
-  height: 100%;
+  // set the height to the height of parent element less height of navbar
+  height: calc(100% - 7rem);
   display: flex;
+  position: relative;
   
   @include respond(tablet) {
     flex-direction: column;
@@ -22,6 +24,7 @@
   &__main {
     position: relative;
     width: 100%;
+    height: 100%;
   }
 }
 
@@ -43,6 +46,11 @@
     fill: $color-grey-light;
     transform: translateY(4px);
     
+    @include respond(switch) {
+      height: 3rem;
+      width: 12rem;
+    }
+    
     &-container {
       height: 7rem;
       transition: all .2s;
@@ -58,13 +66,61 @@
   }
   
   .user-menu {
-    display: flex;
     height: 7rem;
     margin-top: -1.5rem;
     cursor: pointer;
     transition: background-color .2s;
     
-      &__photo {
+    &--large {
+      display: flex;
+      padding-top: 1rem;
+      
+      @include respond(switch) {
+        display: none;
+      }
+    }
+    
+    &--mobile {
+      display: none;
+      height: 100%;
+      width: 7rem;
+      
+      &__icon {
+        position: relative;
+        
+        &, &::after, &::before {
+          height: 2px;
+          width: 2.5rem;
+          background-color: $color-grey-light;
+        }
+        
+        &::before, &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+        }
+        
+        &::before {
+          top: -.6rem;
+        }
+        
+        &::after {
+          top: .7rem;
+          
+          @include respond(mobile) {
+            top: .6rem;
+          }
+        }
+      }
+      
+      @include respond(switch) {
+        display: flex;
+        align-items: center;
+        justify-content: center
+      }
+    }
+    
+    &__photo {
       height: 5rem;
       border-radius: 20rem;
       
@@ -137,9 +193,17 @@
   height: 100%;
   
   @include respond(tablet) {
+    height: auto;
     width: 100%;
-    flex-direction: row;
-    justify-content: space-between;
+    display: grid;
+    grid-template: 6rem / repeat(4, 1fr);
+    grid-column-gap: .2rem;
+    
+    background-color: white;
+  }
+  
+  @include respond(switch) {
+    grid-template-rows: 8rem;
   }
   
   &__item {
@@ -149,6 +213,15 @@
     transition: all .2s;
     position: relative;
     
+    @include respond(tablet) {
+      background-color: $color-grey-light;
+    }
+    
+    @include respond(switch) {
+      flex-direction: column;
+      justify-content: center;
+      padding: 1rem;
+    }
     
     &:hover {
       background-color: $color-grey;
@@ -175,6 +248,16 @@
       border-radius: 10rem;
       color: white;
       font-size: 1.2rem;
+      
+      @include respond(switch) {
+        top: .5rem;
+        left: 10.5rem;
+      }
+      
+      @include respond(mobile) {
+        top: .8rem;
+        left: 9rem;
+      }
     }
   }
   
@@ -182,6 +265,11 @@
     font-size: 1.4rem;
     margin-left: 2rem;
     color: $color-secondary;
+    
+    @include respond(switch) {
+      margin-left: 0;
+      margin-top: .5rem;
+    }
   }
   
   &__active {

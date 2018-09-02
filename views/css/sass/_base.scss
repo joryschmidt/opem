@@ -18,6 +18,14 @@ $def-border-radius: 4px;
 
 html {
   font-size: 62.5%;
+  
+  @include respond(switch) {
+    font-size: 56.25%;
+  }
+  
+  @include respond(mobile) {
+    font-size: 50%;
+  }
 }
 
 body {
