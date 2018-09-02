@@ -123,13 +123,20 @@ exports.getAll = function(req, res) {
 };
 
 // allows guest to sign up for event. 
-// CHECK IF CALLBACK WORKS
 exports.guestSignUp = function(req, res) {
-  Event.find({ _id: req.body.event_id }, { $push: { attendees: req.body.name }}, done(err, event, req, res, 'There was a problem registering guest', 'Guest successfully registered'));
+  Event.find({ _id: req.body.event_id }, { $push: { attendees: req.body.name }}, function(err, event) {
+    if (err) res.status(500).send('There was a problem registering guest');
+    else {
+      console.log(event);
+      res.send('Guest successfully registered');
+    }
+  });
 };
 
-exports.eventSearchName =function(req, res) {
-  Event.find({ name: req.body.name }, function(err, events) {
+// search for events by name and location. Just add documents to the array to search for other parameters (like VENUE)
+exports.eventSearchName = function(req, res) {
+  var rgx = new RegExp(req.body.name, 'i');
+  Event.find({ $or: [{ name: rgx }, { location: rgx }] }, function(err, events) {
     if (err) {
       console.log('error retrieving event');
       res.status(500).send('There was an error');
