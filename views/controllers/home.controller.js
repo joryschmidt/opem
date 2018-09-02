@@ -38,6 +38,7 @@ angular.module('opem')
       $scope.event = {};
       // Closes the popup if it was successfully saved
       jQuery('#popup2').css({ visibility: 'hidden', opacity: 0 });
+      // calling this here updates view after creating event
       getUserData();
     }, function(err) {
       console.log(err);
@@ -53,5 +54,4 @@ angular.module('opem')
       console.log('Failure finding event');
     });
   }
-  
 }]);
