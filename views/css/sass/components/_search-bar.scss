@@ -6,6 +6,11 @@ $grey: darken($color-grey, 10%);
   font-size: 2.5rem;
   text-transform: uppercase;
   color: $grey;
+  width: 150%;
+  
+  &::placeholder {
+    color: $grey;
+  }
   
   &--venue {
     

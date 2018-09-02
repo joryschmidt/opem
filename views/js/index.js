@@ -20,7 +20,6 @@ $(document).ready(function() {
   // populates navbar with user info
   axios.get('/user').then(function(response) {
     var user = response.data;
-    console.log(user.username);
     user.gravatar += '?d=identicon';
     $('#user-photo').attr('src', user.gravatar);
     document.getElementById('user-name').innerText = user.username;

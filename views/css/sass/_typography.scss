@@ -27,3 +27,8 @@ a:link, a:hover, a:visited, a:active {
 .darken {
   background-color: darken($color-secondary, 10%);
 }
+
+// Chrome-specific styling
+input[type="date"]::-webkit-inner-spin-button { 
+  display: none; 
+}
