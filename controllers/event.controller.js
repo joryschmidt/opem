@@ -41,7 +41,7 @@ exports.createEvent = function(req, res, next) {
   newEvent.save(function(err, event) {
     if (err) {
       console.log(err.message);
-      res.send("There was an error creating this event");
+      res.status(500).send("There was an error creating this event");
     }
     else {
       console.log('Event successfully saved');

@@ -2,7 +2,9 @@ integrate XSRF security with angular $http
 
 finish web views
 create routes to add and remove users from events and events from users
-integrate home page to make angular app for sidebar links. I'll have to push some home controller logic outside of angular to work the navbar
+add .catch error routing for axios
+integrate database login, signup, event creation errors into popup notifications
+look up how to inject data from one angular view into another for search results
 
 
 mobile views
@@ -12,8 +14,8 @@ form validations
 
 Need designs for:
 - view of a single event
+- user profile and edit view
 - guest views
-- date for signup window
 - event signup form for guest
 - need svg of edit event pencil
 
@@ -22,6 +24,7 @@ Need designs for:
 ask lenny if he wants the event cards to all be the same height
 ask lenny what checked checkboxes should look like
 ask about favorites category in design
+ask what links are in the dropdown menu, profile is assumed
 add signup date field to form
 add venue field to form
 recurring checkbox needs to be more specifc, or specifically for weekly events only

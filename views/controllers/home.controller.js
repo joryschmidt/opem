@@ -41,8 +41,7 @@ angular.module('opem')
       // calling this here updates view after creating event
       getUserData();
     }, function(err) {
-      console.log(err);
-      console.log('there was some frontend error creating the event');
+      console.log(err.data);
     });
   };
   

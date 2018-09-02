@@ -178,7 +178,7 @@ a:link, a:hover, a:visited, a:active {
   height: 5rem;
   width: 12rem;
   padding: 1rem;
-  color: white;
+  color: white !important;
   background-color: #51606b;
   transition: background-color .2s;
   text-align: right;

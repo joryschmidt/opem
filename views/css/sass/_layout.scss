@@ -111,7 +111,7 @@
     height: 5rem;
     width: 12rem;
     padding: 1rem;
-    color: white;
+    color: white !important; 
     background-color: $color-secondary;
     transition: background-color .2s;
     text-align: right;
