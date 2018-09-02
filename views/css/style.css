@@ -87,6 +87,12 @@ input[type="date"]::-webkit-inner-spin-button {
   display: flex;
 }
 
+@media only screen and (max-width: 68.75em) {
+  .content {
+    flex-direction: column;
+  }
+}
+
 .content__main {
   position: relative;
   width: 100%;
@@ -202,6 +208,14 @@ input[type="date"]::-webkit-inner-spin-button {
   height: 100%;
 }
 
+@media only screen and (max-width: 68.75em) {
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
 .sidebar__item {
   padding: 2rem;
   display: flex;
@@ -298,6 +312,16 @@ input[type="date"]::-webkit-inner-spin-button {
   border-radius: 4px;
   box-shadow: var(--box-shadow);
   overflow: hidden;
+}
+
+@media only screen and (max-width: 93.75em) {
+  .popup__content {
+    top: 0;
+    right: 0;
+    width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+  }
 }
 
 .popup__form {

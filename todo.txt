@@ -5,6 +5,7 @@ create routes to add and remove users from events and events from users
 add .catch error routing for axios
 integrate database login, signup, event creation errors into popup notifications
 look up how to inject data from one angular view into another for search results
+refactor hosted events markup into events display partial
 
 
 mobile views

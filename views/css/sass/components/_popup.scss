@@ -9,7 +9,6 @@
   opacity: 0;
   
   transition: all .3s;
-  
   background-color: rgba(0, 0, 0, 0.2);
   
   &__heading {
@@ -23,7 +22,6 @@
   
   &__content {
     width: 110rem;
-    
     position: absolute;
     top: 8rem;
     right: 20rem;
@@ -32,6 +30,14 @@
     border-radius: $def-border-radius;
     box-shadow: var(--box-shadow);
     overflow: hidden;
+    
+    @include respond(laptop) {
+      top: 0;
+      right: 0;
+      width: 100%;
+      border-radius: 0;
+      box-shadow: none;
+    }
   }
   
   &__form {
