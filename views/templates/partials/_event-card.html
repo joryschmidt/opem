@@ -1,15 +1,17 @@
 <div class="event-card">
-  <div class="event-card__heading"><span class="event-card__heading--text">{{ event.name }}</span><div class="pencil-glyph">&#9998;</div></div>
-  <span class="event-card__venue">At <span class="venue--name">{{ event.location }}</span></span>
-  <div class="event-card__date">
-    <div class="event-card--day">
-      <span class="event-card__date--calendar">{{ event.calendar }}</span>
-      <span class="event-card__date--remaining">{{ remaining }}</span>
+  <div class="event-card--info">
+    <div class="event-card__heading"><span class="event-card__heading--text">{{ event.name }}</span><div class="pencil-glyph">&#9998;</div></div>
+    <span class="event-card__venue">At <span class="venue--name">{{ event.location }}</span></span>
+    <div class="event-card__date">
+      <div class="event-card--day">
+        <span class="event-card__date--calendar">{{ event.calendar }}</span>
+        <span class="event-card__date--remaining" ng-show="event.remaining">{{ event.remaining }} days</span>
+      </div>
+      
+      <span class="event-card__date--time">{{ event.start }} <span class="event-card__time--end" ng-show="event.time_end">- {{ event.end }}</span></span>
     </div>
-    
-    <span class="event-card__date--time">{{ event.start }} <span class="event-card__time--end" ng-show="event.time_end">- {{ event.end }}</span></span>
   </div>
   
-  <div class="event-card__spots">{{ event.spots_left }} of {{ event.spots }} spots remaining</div>
+  <div class="event-card__spots"><span class="event-card__spots--number">{{ event.spots_left }}</span> of <span class="event-card__spots--number">{{ event.spots }}</span> remaining</div>
   <div class="event-card__view">View</div>
 </div>

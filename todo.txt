@@ -8,6 +8,7 @@ look up how to inject data from one angular view into another for search results
 refactor hosted events markup into events display partial
 move notification icon logic outside angular home controller
 implement hamburger icon animation
+remove date input placeholder at laptop level
 
 
 mobile views
@@ -21,6 +22,7 @@ Need designs for:
 - guest views
 - event signup form for guest
 - need svg of edit event pencil
+- need question mark in circle svg
 
 - events should have a quick signup option for logged in users, either in view or on card
 

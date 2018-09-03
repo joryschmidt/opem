@@ -8,7 +8,7 @@ angular.module('opem')
     $http.get('/event/hosted/' + $scope.user._id).then(function(q) {
       var events = q.data;
       var date_options = {
-        weekday: 'long',
+        // weekday: 'long',
         day: 'numeric',
         month: 'long',
         year: 'numeric'
@@ -29,6 +29,10 @@ angular.module('opem')
           var end = new Date(e.time_end);
           e.end = end.toLocaleTimeString('en-US', time_options);
         }
+        
+        var until = Date.parse(e.date) - Date.now();
+        
+        if (until > 0) e.remaining = Math.floor(until / 86400000);
         
         e.spots_left = e.spots - e.attendees.length;
       });
