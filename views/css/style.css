@@ -374,6 +374,12 @@ input[type="date"]::-webkit-inner-spin-button {
   }
 }
 
+@media only screen and (max-width: 25rem) {
+  .sidebar__text {
+    display: none;
+  }
+}
+
 .sidebar__active {
   background-color: #dedede;
 }
@@ -763,10 +769,10 @@ input[type="date"]::-webkit-inner-spin-button {
     box-shadow: none;
     border-top: 1px solid #dedede;
     border-radius: 0;
-    margin-top: 2.5rem;
+    margin: 2.5rem 0;
     font-size: 2rem;
     display: grid;
-    grid-template: 4fr 1fr / 2.5fr 1fr;
+    grid-template: 3.5fr 1fr / 2.5fr 1fr;
   }
 }
 
@@ -788,10 +794,18 @@ input[type="date"]::-webkit-inner-spin-button {
   color: #20bf6b;
   margin-bottom: 1rem;
   max-width: 70%;
+  display: inline-block;
+  text-indent: 2rem hanging each-line;
 }
 
 .event-card__date {
   margin-left: 2rem;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .event-card__date {
+    margin-bottom: 2rem;
+  }
 }
 
 .event-card__date--calendar {
@@ -825,6 +839,8 @@ input[type="date"]::-webkit-inner-spin-button {
     width: 17rem;
     height: 17rem;
     padding: 0;
+    margin-top: 0;
+    line-height: 1.4;
   }
 }
 

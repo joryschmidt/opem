@@ -270,6 +270,10 @@
       margin-left: 0;
       margin-top: .5rem;
     }
+    
+    @include respond(tiny) {
+      display: none;
+    }
   }
   
   &__active {
