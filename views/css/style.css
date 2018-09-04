@@ -112,7 +112,7 @@ input[type="date"]::-webkit-inner-spin-button {
   height: 100%;
 }
 
-@media only screen and (max-width: 25rem) {
+@media only screen and (max-width: 25em) {
   .content__main {
     overflow: auto;
   }
@@ -370,7 +370,7 @@ input[type="date"]::-webkit-inner-spin-button {
   }
 }
 
-@media only screen and (max-width: 25rem) {
+@media only screen and (max-width: 25em) {
   .sidebar__text {
     display: none;
   }
@@ -503,7 +503,7 @@ input[type="date"]::-webkit-inner-spin-button {
   }
 }
 
-@media only screen and (max-width: 25rem) {
+@media only screen and (max-width: 25em) {
   .popup__form__label {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
@@ -535,7 +535,7 @@ input[type="date"]::-webkit-inner-spin-button {
   }
 }
 
-@media only screen and (max-width: 25rem) {
+@media only screen and (max-width: 25em) {
   .popup__form > * {
     padding: .8rem;
   }
@@ -957,7 +957,7 @@ input[type="date"]::-webkit-inner-spin-button {
   }
 }
 
-@media only screen and (max-width: 25rem) {
+@media only screen and (max-width: 25em) {
   .home {
     width: 90%;
   }
@@ -1016,12 +1016,18 @@ input[type="date"]::-webkit-inner-spin-button {
 }
 
 .login {
-  width: 50vw;
+  width: 120rem;
   margin: 0 auto;
   padding-top: 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+@media only screen and (max-width: 75em) {
+  .login {
+    width: 100%;
+  }
 }
 
 .login__logo {
@@ -1032,6 +1038,20 @@ input[type="date"]::-webkit-inner-spin-button {
   margin-bottom: 8rem;
 }
 
+@media only screen and (max-width: 50em) {
+  .login__logo {
+    margin-bottom: 5rem;
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+  .login__logo {
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    height: 5rem;
+  }
+}
+
 .login__heading {
   text-transform: uppercase;
   color: white;
@@ -1039,6 +1059,12 @@ input[type="date"]::-webkit-inner-spin-button {
   margin: 3rem 0;
   letter-spacing: 1px;
   cursor: default;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .login__heading {
+    font-size: 2.6rem;
+  }
 }
 
 .login__form {
@@ -1055,6 +1081,31 @@ input[type="date"]::-webkit-inner-spin-button {
   padding: 5rem 8rem;
 }
 
+@media only screen and (max-width: 75em) {
+  .login__form-container {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 68.75em) {
+  .login__form-container {
+    width: 62.5%;
+  }
+}
+
+@media only screen and (max-width: 50em) {
+  .login__form-container {
+    width: 75%;
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+  .login__form-container {
+    width: 90%;
+    padding: 5rem;
+  }
+}
+
 .login__btn {
   margin-top: 2rem;
   margin-bottom: 4rem;
@@ -1068,10 +1119,56 @@ input[type="date"]::-webkit-inner-spin-button {
   margin-top: 2rem;
 }
 
+@media only screen and (max-width: 75em) {
+  .login__links {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 68.75em) {
+  .login__links {
+    width: 62.5%;
+  }
+}
+
+@media only screen and (max-width: 50em) {
+  .login__links {
+    width: 75%;
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+  .login__links {
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 .login__links--text {
   cursor: default;
   color: #ebebeb;
   font-size: 1.4rem;
+}
+
+@media only screen and (max-width: 50em) {
+  .login__links--text {
+    font-size: 1.6rem;
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+  .login__links--text {
+    font-size: 2rem;
+    margin: 2rem;
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+  .login__input {
+    font-size: 1.6rem;
+    padding: 1.8rem;
+  }
 }
 
 .signup {
