@@ -22,4 +22,8 @@
   @if $breakpoint == 'tiny' {
     @media only screen and (max-width: 25em) { @content } // 400px
   }
+  
+  @if $breakpoint == 'iota' {
+    @media only screen and (max-width: 21.25em) { @content } // 340px
+  }
 }

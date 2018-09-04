@@ -5,11 +5,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100%;
+  overflow: auto;
   
   @include respond(login) {
     width: 100%;
   }
-  
   
   &__logo {
     display: block;
@@ -78,6 +79,11 @@
     margin-top: 2rem;
     margin-bottom: 4rem;
     background-color: $color-primary;
+    
+    @include respond(mobile) {
+      margin-bottom: 2rem;
+      font-size: 1.6rem;
+    }
   }
   
   &__links {
@@ -116,6 +122,11 @@
       @include respond(mobile) {
         font-size: 2rem;
         margin: 2rem;
+      }
+      
+      @include respond(iota) {
+        font-size: 1.8rem;
+        text-align: center;
       }
     }
   }
