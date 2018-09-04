@@ -1,5 +1,4 @@
 integrate XSRF security with angular $http
-
 finish web views
 create routes to add and remove users from events and events from users
 add .catch error routing for axios
@@ -9,6 +8,7 @@ refactor hosted events markup into events display partial
 move notification icon logic outside angular home controller
 implement hamburger icon animation
 remove date input placeholder at laptop level
+popup is making ui too small on small phones, pls fix
 
 
 mobile views

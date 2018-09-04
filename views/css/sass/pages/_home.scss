@@ -3,6 +3,14 @@
   margin: 0 auto;
   margin-top: 8rem;
   
+  @include respond(mobile) {
+    width: 45rem;
+  }
+  
+  @include respond(tiny) {
+    width: 90%;
+  }
+  
   &__search-bar {
     
     border-bottom: 1px solid $color-grey-dark;

@@ -55,6 +55,10 @@
       flex-direction: column;
       justify-content: space-between;
     }
+    
+    @include respond(tiny) {
+      // height: auto;
+    }
   }
   
   &__form {
@@ -84,6 +88,11 @@
       @include respond(switch) {
         text-align: left;
       }
+      
+      @include respond(tiny) {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+      }
     }
     
     &__input {
@@ -104,6 +113,10 @@
       
       @include respond(switch) {
         margin: .8rem;
+      }
+      
+      @include respond(tiny) {
+        padding: .8rem;
       }
     }
     

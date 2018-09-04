@@ -112,6 +112,12 @@ input[type="date"]::-webkit-inner-spin-button {
   height: 100%;
 }
 
+@media only screen and (max-width: 25rem) {
+  .content__main {
+    overflow: auto;
+  }
+}
+
 .nav {
   height: 7rem;
   display: flex;
@@ -336,8 +342,8 @@ input[type="date"]::-webkit-inner-spin-button {
   width: 1.8rem;
   height: 1.8rem;
   position: absolute;
-  top: 1rem;
-  left: 3rem;
+  top: -.7rem;
+  right: -.2rem;
   display: none;
   justify-content: center;
   align-items: center;
@@ -347,18 +353,8 @@ input[type="date"]::-webkit-inner-spin-button {
   font-size: 1.2rem;
 }
 
-@media only screen and (max-width: 50em) {
-  .sidebar__icon--notification {
-    top: .5rem;
-    left: 10.5rem;
-  }
-}
-
-@media only screen and (max-width: 37.5em) {
-  .sidebar__icon--notification {
-    top: .8rem;
-    left: 9rem;
-  }
+.sidebar__icon-container {
+  position: relative;
 }
 
 .sidebar__text {
@@ -507,6 +503,13 @@ input[type="date"]::-webkit-inner-spin-button {
   }
 }
 
+@media only screen and (max-width: 25rem) {
+  .popup__form__label {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+}
+
 .popup__form__input {
   border: 1px solid #dedede;
   border-radius: 4px;
@@ -529,6 +532,12 @@ input[type="date"]::-webkit-inner-spin-button {
 @media only screen and (max-width: 50em) {
   .popup__form > * {
     margin: .8rem;
+  }
+}
+
+@media only screen and (max-width: 25rem) {
+  .popup__form > * {
+    padding: .8rem;
   }
 }
 
@@ -769,7 +778,7 @@ input[type="date"]::-webkit-inner-spin-button {
     box-shadow: none;
     border-top: 1px solid #dedede;
     border-radius: 0;
-    margin: 2.5rem 0;
+    margin-top: 2.5rem;
     font-size: 2rem;
     display: grid;
     grid-template: 3.5fr 1fr / 2.5fr 1fr;
@@ -940,6 +949,18 @@ input[type="date"]::-webkit-inner-spin-button {
   width: 50rem;
   margin: 0 auto;
   margin-top: 8rem;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .home {
+    width: 45rem;
+  }
+}
+
+@media only screen and (max-width: 25rem) {
+  .home {
+    width: 90%;
+  }
 }
 
 .home__search-bar {

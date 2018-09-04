@@ -25,6 +25,11 @@
     position: relative;
     width: 100%;
     height: 100%;
+    
+    @include respond(tiny) {
+      // This prevents the html element from collapsing at very small screen sizes, when the popup gets too big for its britches
+      overflow: auto;
+    }
   }
 }
 
@@ -237,8 +242,8 @@
       width: 1.8rem;
       height: 1.8rem;
       position: absolute;
-      top: 1rem;
-      left: 3rem;
+      top: -.7rem;
+      right: -.2rem;
       
       display: none;
       justify-content: center;
@@ -249,15 +254,10 @@
       color: white;
       font-size: 1.2rem;
       
-      @include respond(switch) {
-        top: .5rem;
-        left: 10.5rem;
-      }
-      
-      @include respond(mobile) {
-        top: .8rem;
-        left: 9rem;
-      }
+    }
+    
+    &-container {
+      position: relative;
     }
   }
   
