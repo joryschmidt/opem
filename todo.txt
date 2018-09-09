@@ -15,25 +15,12 @@ mobile views
 google maps api
 form validations
 
-
-Need designs for:
-- view of a single event
-- user profile and edit view
-- guest views
-- event signup form for guest
-- need svg of edit event pencil
-- need question mark in circle svg
-
 - events should have a quick signup option for logged in users, either in view or on card
 
-ask lenny if he wants the event cards to all be the same height
-ask lenny what checked checkboxes should look like
-ask about favorites category in design
-ask what links are in the dropdown menu, profile is assumed
-add signup date field to form
-add venue field to form
 recurring checkbox needs to be more specifc, or specifically for weekly events only
-number of spots, dropdown or enter a number?
 
 
 Spot model may be unnecessary 
+
+- make event cards fixed height
+- automatic login after signup
