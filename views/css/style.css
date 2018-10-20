@@ -600,6 +600,7 @@ input[type="date"]::-webkit-inner-spin-button {
   width: 2.5rem;
   height: 2.5rem;
   fill: #51606b;
+  margin-left: 1rem;
 }
 
 .popup__form__group__container__icon--plus {

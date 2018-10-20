@@ -74,11 +74,11 @@
       display: flex;
       flex-direction: column;
       width: 85%;
-      overflow-y: scroll;
     }
     
     @include respond(mobile) {
       width: 90%;
+      overflow-y: scroll;
     }
     
     &__label {
@@ -172,6 +172,7 @@
           width: 2.5rem;
           height: 2.5rem;
           fill: $color-secondary;
+          margin-left: 1rem;
           
           &--plus {
             fill: white;
