@@ -30,7 +30,7 @@ app.use(sass({
 
 app.use(sessions({
   cookieName: 'session',
-  secret: 'adjhbjbqawerfbqwebmzklpseghjtazkjhabsdvjkbalfsdilasd',
+  secret: process.env.OPENMIC_SESSION,
   duration: 8 * 60 * 60 * 1000,
   activeDuration: 20 * 60 * 1000
 }));
