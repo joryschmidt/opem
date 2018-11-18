@@ -1,6 +1,6 @@
 angular.module('opem')
 
-.controller('homeCtrl', ['$scope', '$http', '$location', function($scope, $http, $location) {
+.controller('homeCtrl', ['$scope', '$http', '$location', 'search', function($scope, $http, $location, search) {
   
   $scope.event = {};
   
@@ -48,9 +48,11 @@ angular.module('opem')
   // this will eventually redirect to search results page, most likely
   $scope.eventSearch = function() {
     $http.post('/event/search/name', { name: $scope.search_name }).then(function(events) {
-      console.log(events);
+      search.storeResults(events.data);
+      $location.path('/results');
     }, function() {
       console.log('Failure finding event');
+      alert('Search must not be blank');
     });
   }
 }]);

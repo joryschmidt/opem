@@ -15,6 +15,10 @@
         templateUrl: 'templates/events.html',
         controller: 'hostedCtrl'
       })
+      .when('/results', {
+        templateUrl: 'templates/results.html',
+        controller: 'resultsCtrl'
+      })
       .when('/error', {
         templateUrl: 'templates/error.html'
       })
@@ -24,6 +28,21 @@
   app.factory('hasRootUser', ['$rootScope', function($rootScope) {
     console.log($rootScope);
     return { check: !!$rootScope.rootUser };
+  }]);
+  
+  app.factory('search', [function() {
+    // Create an object to return with methods to store and retrieve the results of performing a search
+    var obj = {};
+    
+    obj.storeResults = function(results) {
+      obj.results = results;
+    };
+    
+    obj.getResults = function() {
+      return obj.results;
+    }
+    
+    return obj;
   }]);
   
   app.directive('popup', function() {

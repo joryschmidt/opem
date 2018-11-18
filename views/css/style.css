@@ -482,13 +482,13 @@ input[type="date"]::-webkit-inner-spin-button {
     display: flex;
     flex-direction: column;
     width: 85%;
-    overflow-y: scroll;
   }
 }
 
 @media only screen and (max-width: 37.5em) {
   .popup__form {
     width: 90%;
+    overflow-y: scroll;
   }
 }
 
