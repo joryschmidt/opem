@@ -1,4 +1,4 @@
-integrate XSRF security with angular $http
+integrate XSRF security with angular $http and helmetjs
 finish web views
 create routes to add and remove users from events and events from users
 add .catch error routing for axios

@@ -45,6 +45,46 @@
     return obj;
   }]);
   
+  // this service populates event object with necessary properties for display in the event cards
+  app.factory('eventCardService', [function() {
+    var service = {};
+    service.format = function(events) {
+      var date_options = {
+        // weekday: 'long',
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+      };
+      
+      var time_options = {
+        hour: 'numeric'
+      }
+      
+      events.forEach(function(e) {
+        var date = new Date(e.date);
+        e.calendar = date.toLocaleDateString('en-US', date_options);
+        
+        var start = new Date(e.time_start);
+        e.start = start.toLocaleTimeString('en-US', time_options);
+        
+        if (e.time_end) {
+          var end = new Date(e.time_end);
+          e.end = end.toLocaleTimeString('en-US', time_options);
+        }
+        
+        var until = Date.parse(e.date) - Date.now();
+        
+        if (until > 0) e.remaining = Math.floor(until / 86400000);
+        
+        e.spots_left = e.spots - e.attendees.length;
+      });
+      
+      return events;
+    }
+    
+    return service;
+  }]);
+  
   app.directive('popup', function() {
     return {
       restrict: 'E',

@@ -1325,7 +1325,7 @@ input[type="date"]::-webkit-inner-spin-button {
   }
 }
 
-.hosted__events {
+.events__display {
   padding: 6rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(28rem, 1fr));
@@ -1334,7 +1334,7 @@ input[type="date"]::-webkit-inner-spin-button {
 }
 
 @media only screen and (max-width: 37.5em) {
-  .hosted__events {
+  .events__display {
     padding: 0;
     grid-template-columns: 1fr;
     grid-row-gap: 0;
