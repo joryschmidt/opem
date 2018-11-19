@@ -1345,11 +1345,20 @@ input[type="date"]::-webkit-inner-spin-button {
 .event {
   width: 100%;
   padding: 2.5rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+@media only screen and (max-width: 93.75em) {
+  .event {
+    flex-direction: column;
+  }
 }
 
 .event__info {
   display: flex;
   flex-direction: column;
+  margin: 2rem;
 }
 
 .event__title {
@@ -1398,6 +1407,12 @@ input[type="date"]::-webkit-inner-spin-button {
 .event__description {
   font-size: 2rem;
   color: #6b6b6b;
+}
+
+.event__map {
+  height: 60rem;
+  width: 60rem;
+  margin: 2rem;
 }
 
 .error {

@@ -1,4 +1,4 @@
-<div class="event">
+<div class="event" id="event">
   <div class="event__info">
     <span class="event__title">{{ event.name }}</span>
     <span class="event__venue" ng-if="event.venue">{{ event.venue }}</span>
@@ -13,6 +13,23 @@
     
     <span class="event__description">{{ event.description }}</span>
   </div>
-</div>
+  
+  <div class="event__map" id='map'></div>
+  
+  <script type="text/javascript">
+    function initMap() {
+      // wrap logic in a timeout function to give angular enough time to populate the scope
+      setTimeout(function() {
+        var location = angular.element(document.getElementById('event')).scope().event.geocode;
+        
+        var map = new google.maps.Map(document.getElementById('map'), { zoom: 16, center: location });
+        var marker = new google.maps.Marker({ position: location, map: map });
+      }, 150);
+    }
+  </script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5D5t3oZcqu9xK2Wr0SRNj50dhj2Xh2NM&callback=initMap">
+  </script>
 
-{{ event }}
+</div>
+<!--// { lat: 40.015127, lng: -83.011317 }; -->

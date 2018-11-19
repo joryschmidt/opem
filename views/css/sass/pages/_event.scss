@@ -2,9 +2,17 @@
   width: 100%;
   padding: 2.5rem;
   
+  display: flex;
+  justify-content: space-around;
+  
+  @include respond(laptop) {
+    flex-direction: column;
+  }
+  
   &__info {
     display: flex;
     flex-direction: column;
+    margin: 2rem;
   }
   
   &__title {
@@ -57,5 +65,12 @@
   &__description {
     font-size: 2rem;
     color: $color-grey-dark;
+  }
+  
+  &__map {
+    height: 60rem;
+    width: 60rem;
+    
+    margin: 2rem;
   }
 }

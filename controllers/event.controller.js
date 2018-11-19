@@ -10,7 +10,6 @@ exports.getEvent = function(req, res, next) {
       console.log(err);
       res.status(500).send('That event does not exist in the database');
     } else {
-      console.log(event);
       res.json(event);
     }
   });
@@ -84,6 +83,14 @@ exports.updateEvent = function(req, res) {
       console.log(event);
       res.json(event);
     }
+  });
+};
+
+exports.addGeocode = function(req, res) {
+  console.log(req.body);
+  Event.update({ _id: req.params.id }, { $set: { geocode: req.body.geocode }}, function(err, event) {
+    if (err) console.log(err);
+    else res.status(200).send('Geocode added successfully');
   });
 };
 

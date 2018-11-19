@@ -20,6 +20,9 @@ router.delete('/:id', event_controller.deleteEvent);
 // Get all events hosted by user 
 router.get('/hosted/:id', event_controller.hostedEvents);
 
+// Add geocode to specific event
+router.post('/geocode/:id', event_controller.addGeocode);
+
 // Search for events with a specific name
 router.post('/search/name', event_controller.eventSearchName);
 

@@ -23,6 +23,13 @@ var EventSchema = new Schema({
     type: String,
     required: true
   },
+  address: {
+    type: String,
+    required: true
+  },
+  geocode: {
+    type: Schema.Types.Mixed,
+  },
   date: {
     type: Date,
     required: true
