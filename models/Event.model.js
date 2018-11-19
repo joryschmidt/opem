@@ -50,6 +50,9 @@ var EventSchema = new Schema({
     type: String,
     required: true
   },
+  venue: {
+    type: String
+  },
   description: {
     type: String
   },

@@ -872,7 +872,7 @@ input[type="date"]::-webkit-inner-spin-button {
   justify-content: center;
   width: 100%;
   text-transform: uppercase;
-  color: white;
+  color: white !important;
   height: 6rem;
   cursor: pointer;
   transition: background-color 0.2s ease-out;
@@ -1340,6 +1340,64 @@ input[type="date"]::-webkit-inner-spin-button {
     grid-template-columns: 1fr;
     grid-row-gap: 0;
   }
+}
+
+.event {
+  width: 100%;
+  padding: 2.5rem;
+}
+
+.event__info {
+  display: flex;
+  flex-direction: column;
+}
+
+.event__title {
+  font-size: 5rem;
+  color: #6b6b6b;
+  line-height: 1.3;
+}
+
+.event__location {
+  font-size: 3rem;
+  color: #20bf6b;
+}
+
+.event__time {
+  font-size: 2.5rem;
+  color: #20bf6b;
+}
+
+.event__signup {
+  font-size: 1.8rem;
+  color: #6b6b6b;
+}
+
+.event__signup--text {
+  margin-right: 1rem;
+}
+
+.event__signup--start {
+  color: #20bf6b;
+}
+
+.event__signup--end {
+  color: #20bf6b;
+}
+
+.event__spots {
+  color: #6b6b6b;
+  font-size: 1.8rem;
+}
+
+.event__spots--number {
+  color: #20bf6b;
+  margin-left: 1rem;
+}
+
+.event__description {
+  font-size: 2rem;
+  color: #6b6b6b;
 }
 
 .error {

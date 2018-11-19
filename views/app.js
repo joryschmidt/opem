@@ -12,12 +12,16 @@
         controller: 'homeCtrl'
       })
       .when('/hosted', {
-        templateUrl: 'templates/events.html',
+        templateUrl: 'templates/hosted_events.html',
         controller: 'hostedCtrl'
       })
       .when('/results', {
         templateUrl: 'templates/results.html',
         controller: 'resultsCtrl'
+      })
+      .when('/event/:id', {
+        templateUrl: 'templates/event.html',
+        controller: 'eventCtrl'
       })
       .when('/error', {
         templateUrl: 'templates/error.html'

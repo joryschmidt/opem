@@ -13,5 +13,5 @@
   </div>
   
   <div class="event-card__spots"><span class="event-card__spots--number">{{ event.spots_left }}</span>&nbsp;of&nbsp;<span class="event-card__spots--number">{{ event.spots }}</span>&nbsp;remaining</div>
-  <div class="event-card__view">View</div>
+  <a class="event-card__view" ng-href='#!/event/{{ event._id }}'>View</a>
 </div>

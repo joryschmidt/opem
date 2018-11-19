@@ -10,6 +10,8 @@ implement hamburger icon animation
 remove date input placeholder at laptop level
 popup is making ui too small on small phones, pls fix
 
+consider changing location to address if venue is it's own field
+
 
 mobile views
 google maps api
