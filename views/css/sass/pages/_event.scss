@@ -72,5 +72,10 @@
     width: 60rem;
     
     margin: 2rem;
+    
+    @include respond(mobile) {
+      width: 95%;
+      height: 80vw;
+    }
   }
 }

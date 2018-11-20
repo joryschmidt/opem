@@ -1415,6 +1415,14 @@ input[type="date"]::-webkit-inner-spin-button {
   margin: 2rem;
 }
 
+@media only screen and (max-width: 37.5em) {
+  .event__map {
+    margin: 2rem;
+    width: 95%;
+    height: 80vw;
+  }
+}
+
 .error {
   padding-top: 5rem;
 }

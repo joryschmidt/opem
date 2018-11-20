@@ -3,19 +3,12 @@ finish web views
 create routes to add and remove users from events and events from users
 add .catch error routing for axios
 integrate database login, signup, event creation errors into popup notifications
-look up how to inject data from one angular view into another for search results
-refactor hosted events markup into events display partial
 move notification icon logic outside angular home controller
 implement hamburger icon animation
 remove date input placeholder at laptop level
-popup is making ui too small on small phones, pls fix
-
-consider changing location to address if venue is it's own field
-
-
-mobile views
-google maps api
 form validations
+change location field to address and venue fields
+google maps autocomplete address
 
 - events should have a quick signup option for logged in users, either in view or on card
 
@@ -24,5 +17,10 @@ recurring checkbox needs to be more specifc, or specifically for weekly events o
 
 Spot model may be unnecessary 
 
-- make event cards fixed height
 - automatic login after signup
+
+Currently, geocode is added to event when the event is first viewed in order to avoid relying on the google api when first saving the event to the database.
+  Perhaps this can be done instead of, or in addition to, a regular database crawl for updating recurring events
+  
+  
+Ask Logan about other information that should be displayed on individual event view
