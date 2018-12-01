@@ -822,7 +822,7 @@ input[type="date"]::-webkit-inner-spin-button {
 }
 
 .event-card__date--calendar {
-  color: #dedede;
+  color: #b3b3b3;
   margin-right: 4px;
 }
 
@@ -831,7 +831,7 @@ input[type="date"]::-webkit-inner-spin-button {
 }
 
 .event-card__date--time {
-  color: #dedede;
+  color: #b3b3b3;
 }
 
 .event-card__spots {
@@ -891,7 +891,7 @@ input[type="date"]::-webkit-inner-spin-button {
 .pencil-glyph {
   transform: rotate(90deg);
   position: absolute;
-  color: #dedede;
+  color: #b3b3b3;
   top: 1rem;
   right: 1rem;
   cursor: pointer;
@@ -905,7 +905,7 @@ input[type="date"]::-webkit-inner-spin-button {
 }
 
 .pencil-glyph:hover {
-  color: #b8b8b8;
+  color: #8d8d8d;
 }
 
 .search-bar {
@@ -913,16 +913,16 @@ input[type="date"]::-webkit-inner-spin-button {
   border: none;
   font-size: 2.5rem;
   text-transform: uppercase;
-  color: #c5c5c5;
+  color: #b8b8b8;
   width: 150%;
 }
 
 .search-bar::placeholder {
-  color: #c5c5c5;
+  color: #b8b8b8;
 }
 
 .awesomplete li {
-  color: #c5c5c5;
+  color: #b8b8b8;
   text-transform: uppercase;
 }
 
@@ -937,7 +937,7 @@ input[type="date"]::-webkit-inner-spin-button {
 }
 
 .awesomplete mark {
-  color: #c5c5c5;
+  color: #b8b8b8;
   background: none;
 }
 
@@ -1417,7 +1417,6 @@ input[type="date"]::-webkit-inner-spin-button {
 
 @media only screen and (max-width: 37.5em) {
   .event__map {
-    margin: 2rem;
     width: 95%;
     height: 80vw;
   }

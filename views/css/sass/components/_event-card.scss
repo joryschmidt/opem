@@ -61,7 +61,7 @@
     }
     
     &--calendar {
-      color: $color-grey;
+      color: $color-grey-text;
       margin-right: 4px;
     }
     
@@ -70,7 +70,7 @@
     }
     
     &--time {
-      color: $color-grey;
+      color: $color-grey-text;
     }
   }
   
@@ -136,13 +136,13 @@
   
   transform: rotate(90deg);
   position: absolute;
-  color: $color-grey;
+  color: $color-grey-text;
   top: 1rem;
   right: 1rem;
   cursor: pointer;
   transition: color 0.2s ease-out;
   
   &:hover {
-    color: darken($color-grey, 15%);
+    color: darken($color-grey-text, 15%);
   }
 }

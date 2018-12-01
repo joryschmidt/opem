@@ -13,6 +13,7 @@ google maps autocomplete address
 - events should have a quick signup option for logged in users, either in view or on card
 
 recurring checkbox needs to be more specifc, or specifically for weekly events only
+form needs to have seperate fields for venue and address
 
 
 Spot model may be unnecessary 
