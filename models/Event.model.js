@@ -54,8 +54,7 @@ var EventSchema = new Schema({
     required: true
   },
   location: {
-    type: String,
-    required: true
+    type: String
   },
   venue: {
     type: String

@@ -472,7 +472,7 @@ input[type="date"]::-webkit-inner-spin-button {
   width: 75%;
   margin: 0 auto;
   display: grid;
-  grid-template: repeat(3, 1fr) 2.5fr/1.2fr 4fr;
+  grid-template: repeat(4, 1fr) 2.5fr/1.2fr 4fr;
   grid-column-gap: 2.5rem;
   grid-row-gap: 2.5rem;
 }
@@ -482,13 +482,13 @@ input[type="date"]::-webkit-inner-spin-button {
     display: flex;
     flex-direction: column;
     width: 85%;
+    overflow-y: scroll;
   }
 }
 
 @media only screen and (max-width: 37.5em) {
   .popup__form {
     width: 90%;
-    overflow-y: scroll;
   }
 }
 
@@ -532,13 +532,8 @@ input[type="date"]::-webkit-inner-spin-button {
 
 @media only screen and (max-width: 50em) {
   .popup__form > * {
-    margin: .8rem;
-  }
-}
-
-@media only screen and (max-width: 25em) {
-  .popup__form > * {
-    padding: .8rem;
+    margin: -1rem 0;
+    padding: 1.4rem;
   }
 }
 
