@@ -9,6 +9,9 @@
   },
   "author": "Jory Schmidt",
   "license": "ISC",
+  "engines": {
+    "node": "4.7.3"
+  },
   "dependencies": {
     "bcrypt": "^1.0.2",
     "bluebird": "^3.5.0",
