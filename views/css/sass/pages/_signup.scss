@@ -79,8 +79,7 @@
   }
   
   &__btn {
-    margin-top: 2rem;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     background-color: $color-primary;
     
     @include respond(mobile) {

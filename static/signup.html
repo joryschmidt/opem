@@ -25,12 +25,19 @@
               <input type="text" class="form__input signup__input" placeholder="Username" name="username" autofocus />
               <input type="email" class="form__input signup__input" placeholder="Email address" name="email" />
               <input type="password" class="form__input signup__input" placeholder="Password" name="password" />
-              <input class="btn signup__btn" type="submit" value="Sign Up" />
+              <input type="submit" style="visibility: hidden;" id="submit" />
+              <button class="btn signup__btn" id="submit-button">Sign up</button>
             </form>
           </div>
           
           <span class="signup__link"><a class='signup__links-link' href='/login'>Already have an account?</a></span>
         </div>
       </div>
+      
+      <script type="text/javascript">
+        $('#submit-button').click(function() {
+          $('#submit').click();
+        });
+      </script>
     </body>
 </html>
