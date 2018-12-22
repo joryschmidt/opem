@@ -20,12 +20,24 @@
     function initMap() {
       // wrap logic in a timeout function to give angular enough time to populate the scope
       setTimeout(function() {
-        var location = angular.element(document.getElementById('event')).scope().event.geocode;
+        var element = angular.element(document.getElementById('event')).scope().event;
+        var location = element.geocode;
+        var label = {
+          text: element.venue,
+          color: '#51606b',
+          fontWeight: 'bold'
+        };
+        
+        var image = {
+          url: '/img/opem-icon.png',
+          labelOrigin: new google.maps.Point(0, -15),
+        };
         
         var map = new google.maps.Map(document.getElementById('map'), { zoom: 16, center: location });
-        var marker = new google.maps.Marker({ position: location, map: map });
-      }, 250);
+        var marker = new google.maps.Marker({ position: location, map: map, label: label, icon: image });
+      }, 500);
     }
+    //labelOrigin: new google.maps.Point(20, 20)
   </script>
   <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5D5t3oZcqu9xK2Wr0SRNj50dhj2Xh2NM&callback=initMap">

@@ -22,8 +22,9 @@ exports.createEvent = function(req, res, next) {
   newEvent.name = req.body.name;
   newEvent.date = req.body.date;
   newEvent.time_start = req.body.time_start;
-  newEvent.location = req.body.location;
+  newEvent.address = req.body.address;
   
+  if (req.body.venue) newEvent.venue = req.body.venue;
   if (req.body.time_end) newEvent.time_end = req.body.time_end;
   if (req.body.description) newEvent.description = req.body.description;
   if (req.body.recurring) newEvent.recurring = req.body.recurring;
@@ -144,7 +145,7 @@ exports.guestSignUp = function(req, res) {
 exports.eventSearchName = function(req, res) {
   if (!req.body.name) res.status(404);
   var rgx = new RegExp(req.body.name, 'i');
-  Event.find({ $or: [{ name: rgx }, { location: rgx }] }, function(err, events) {
+  Event.find({ $or: [{ name: rgx }, { venue: rgx }] }, function(err, events) {
     if (err) {
       console.log('error retrieving event');
       res.status(500).send('There was an error');
