@@ -87,11 +87,25 @@ exports.updateEvent = function(req, res) {
   });
 };
 
+exports.removeAttendee = function(req, res) {
+  Event.update({ _id: req.body.id }, { $pull: { attendees: req.body.user_id }}, function(err, event) {
+    if (err) console.log(err);
+    else res.json('Attendee successfully removed');
+  });
+};
+
+exports.addAttendee = function(req, res) {
+  Event.update({ _id: req.body.id }, { $push: { attendees: req.body.user_id }}, function(err, event) {
+    if (err) console.log(err);
+    else res.json('Attendee successfullly added');
+  });
+}
+
 exports.addGeocode = function(req, res) {
   console.log(req.body);
   Event.update({ _id: req.params.id }, { $set: { geocode: req.body.geocode }}, function(err, event) {
     if (err) console.log(err);
-    else res.status(200).send('Geocode added successfully');
+    else res.status(200).json('Geocode added successfully');
   });
 };
 
