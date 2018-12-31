@@ -49,6 +49,20 @@
     return obj;
   }]);
   
+  app.factory('eventNotifications', [function() {
+    
+    var service = {};
+    
+    service.hosted = function(user) {
+      if (user.hosted_events.length > 0) {
+        jQuery('#hosted-notification').css('display', 'flex');
+        document.getElementById('hosted-notification').innerText = user.hosted_events.length.toString();
+      }
+    }
+    
+    return service;
+  }]);
+  
   // this service populates event object with necessary properties for display in the event cards
   app.factory('eventCardService', [function() {
     var service = {};

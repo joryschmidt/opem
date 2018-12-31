@@ -1,6 +1,6 @@
 angular.module('opem')
 
-.controller('homeCtrl', ['$scope', '$http', '$location', 'search', function($scope, $http, $location, search) {
+.controller('homeCtrl', ['$scope', '$http', '$location', 'search', 'eventNotifications', function($scope, $http, $location, search, eventNotifications) {
   
   $scope.event = {};
   
@@ -11,10 +11,7 @@ angular.module('opem')
       $scope.event.host = user._id;
       
       // this makes the notification show up
-      if (user.hosted_events.length > 0) {
-        jQuery('#hosted-notification').css('display', 'flex');
-        document.getElementById('hosted-notification').innerText = user.hosted_events.length.toString();
-      }
+      eventNotifications.hosted(user);
     }, function(response) {
       console.log('Sorry bub, but you have to sign up to see that page');
       window.location.href = '/login';
@@ -45,7 +42,7 @@ angular.module('opem')
     });
   };
   
-  // this will eventually redirect to search results page, most likely
+  // submits search query and redirects to results page
   $scope.eventSearch = function() {
     $http.post('/event/search/name', { name: $scope.search_name }).then(function(events) {
       search.storeResults(events.data);
