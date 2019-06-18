@@ -22,5 +22,3 @@ Spot model may be unnecessary
 Currently, geocode is added to event when the event is first viewed in order to avoid relying on the google api when first saving the event to the database.
   Perhaps this can be done instead of, or in addition to, a regular database crawl for updating recurring events
   
-  
-Ask Logan about other information that should be displayed on individual event view
