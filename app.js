@@ -15,7 +15,7 @@ var event = require('./routes/event');
 var db = 'mongodb://' + process.env.IP + '/openmic';
 
 mongoose.Promise = bluebird;
-mongoose.connect(process.env.MONGODB_URI || db);
+mongoose.connect(process.env.MONGODB_URI || db, { useMongoClient: true });
 
 var app = express();
 
