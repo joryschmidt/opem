@@ -1,18 +1,20 @@
 var Event = require('../models/Event.model');
 var User = require('../models/User.model');
-var callbacks = require('./callbacks');
-var done = callbacks.done;
-var jdone = callbacks.jdone;
 
-exports.getEvent = function(req, res, next) {
-  Event.findOne({ _id: req.params.id }, function(err, event) {
+function handler(res, err_msg) {
+  return function(err, data) {
     if (err) {
       console.log(err);
-      res.status(500).send('That event does not exist in the database');
+      console.log(err_msg);
+      res.sendStatus(500);
     } else {
-      res.json(event);
+      res.json(data);
     }
-  });
+  }
+}
+
+exports.getEvent = function(req, res, next) {
+  Event.findOne({ _id: req.params.id }, handler(res, "That event does not exist in the database"));
 };
 
 // Create an event, logs to server console
@@ -76,15 +78,7 @@ exports.updateEvent = function(req, res) {
       recurring: req.body.recurring,
       requestable: req.body.requestable
     }
-  }, function(err, event) {
-    if (err) {
-      console.log(err);
-      res.status(500).send('Event could not be updated');
-    } else {
-      console.log(event);
-      res.json(event);
-    }
-  });
+  }, handler(res, "Event could not be updated"));
 };
 
 exports.removeAttendee = function(req, res) {
@@ -110,62 +104,26 @@ exports.addGeocode = function(req, res) {
 };
 
 exports.deleteEvent = function(req, res) {
-  Event.findOneAndRemove({ _id: req.params.id }, function(err, event) {
-    if (err) {
-      console.log(err);
-      res.status(500).send('Event could not be deleted');
-    } else {
-      console.log(event);
-      res.status(200).send('Event has been deleted');
-    }
-  });
+  Event.findOneAndRemove({ _id: req.params.id }, handler(res, "Event could not be deleted"));
 };
 
 // returns events hosted by currently logged in user
 exports.hostedEvents = function(req, res) {
-  Event.find({ host: req.params.id }).lean().sort({ date: 1 }).exec(function(err, events) {
-    if (err) {
-      console.log(err);
-      res.status(500).send('Events could not be found');
-    } else {
-      res.json(events);
-    }
-  });
+  Event.find({ host: req.params.id }).lean().sort({ date: 1 }).exec(handler(res, "Event could not be found"));
 };
 
 exports.getAll = function(req, res) {
-  Event.find({}, 'name -_id').lean().exec(function(err, events) {
-    if (err) {
-      console.log(err);
-      res.status(500).send('There was an error gettings events');
-    } else {
-      res.json(events);
-    }
-  });
+  Event.find({}, 'name -_id').lean().exec(handler(res, "There was an error retrieving events"));
 };
 
 // allows guest to sign up for event. 
 exports.guestSignUp = function(req, res) {
-  Event.find({ _id: req.body.event_id }, { $push: { attendees: req.body.name }}, function(err, event) {
-    if (err) res.status(500).send('There was a problem registering guest');
-    else {
-      console.log(event);
-      res.send('Guest successfully registered');
-    }
-  });
+  Event.find({ _id: req.body.event_id }, { $push: { attendees: req.body.name }}, handler(res, "There was a problem registering guest"));
 };
 
 // search for events by name and location. Just add documents to the array to search for other parameters (like VENUE)
 exports.eventSearchName = function(req, res) {
   if (!req.body.name) res.status(404);
   var rgx = new RegExp(req.body.name, 'i');
-  Event.find({ $or: [{ name: rgx }, { venue: rgx }] }, function(err, events) {
-    if (err) {
-      console.log('error retrieving event');
-      res.status(500).send('There was an error');
-    }
-    else {
-      res.json(events);
-    }
-  });
+  Event.find({ $or: [{ name: rgx }, { venue: rgx }] }, handler(res, "Internal server error"));
 };
